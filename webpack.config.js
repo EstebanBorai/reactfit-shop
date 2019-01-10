@@ -2,9 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './client/index.tsx',
+  entry: {
+    client: './client/index.tsx',
+    server: './server/index.js'
+  },
   output: {
-    filename: 'index.js',
+    filename: '[name]/index.js',
     path: path.resolve(__dirname, 'bundle')
   },
   module: {
@@ -27,6 +30,10 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
+      },
+      { 
+        test: /\.styl$/, 
+        loader: 'style-loader!css-loader!stylus-loader' 
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -59,6 +66,6 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.ts', '.tsx']
+    extensions: ['.js', '.ts', '.tsx', '.styl']
   }
 }
