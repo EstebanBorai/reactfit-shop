@@ -66,6 +66,9 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.styl']
+    extensions: ['.js', '.ts', '.tsx', '.styl'],
+    alias: {
+      components: path.resolve(__dirname, 'client/components')
+    } 
   }
 }
