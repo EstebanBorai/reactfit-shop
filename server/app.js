@@ -8,9 +8,13 @@ const cors = require('cors');
 const passport = require('passport');
 const errorhandler = require('errorhandler');
 const mongoose = require('mongoose');
+const io = require('socket.io');
+const startSockets = require('./startSockets');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const app = express();
+const HTTPServer = http.Server(app);
+const sockets = io(HTTPServer);
 
 app.use(cors());
 app.use(require('morgan')('dev'));
@@ -58,6 +62,9 @@ app.use((err, req, res, next) => {
   }});
 });
 
-const server = app.listen( process.env.PORT || 3000, function(){
+startSockets(sockets);
+
+const server = app.listen( process.env.PORT || 3000, function() {
+  HTTPServer.listen(3001);
   console.log('Listening on port ' + server.address().port);
 });

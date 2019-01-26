@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 router.get('/', (req, res, next) => {
-  res.send('socket!');
+  res.send('Lobby Hub');
 });
 
 module.exports = router;
