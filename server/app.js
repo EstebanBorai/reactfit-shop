@@ -31,7 +31,7 @@ if (!isProduction) {
 if(isProduction) {
   mongoose.connect(process.env.MONGODB_URI);
 } else {
-  mongoose.connect('mongodb://localhost/lobby-app');
+  mongoose.connect('mongodb://localhost/lobby_app_data');
   mongoose.set('debug', true);
 }
 

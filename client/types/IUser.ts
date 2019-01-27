@@ -1,10 +1,10 @@
 interface IUser {
-  id: String;
-  firstName: String;
-  lastName: String;
-  username: String;
-  avatar: Array<String>;
-  country: String;
+  id: string;
+  firstName: string;
+  lastName: string;
+  username: string;
+  avatar: Array<string>;
+  country: string;
   genre: number;
   active: Boolean;
 }

@@ -71,6 +71,7 @@ module.exports = {
     alias: {
       components: path.resolve(__dirname, 'client/components'),
       reducers: path.resolve(__dirname, 'client/reducers'),
+      theme: path.resolve(__dirname, 'client/theme'),
       types: path.resolve(__dirname, 'client/types')
     } 
   }
