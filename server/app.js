@@ -1,11 +1,7 @@
 const http = require('http');
-const path = require('path');
-const methods = require('methods');
 const express = require('express');
 const bodyParser = require('body-parser');
-const session = require('express-session');
 const cors = require('cors');
-const passport = require('passport');
 const errorhandler = require('errorhandler');
 const mongoose = require('mongoose');
 const io = require('socket.io');
@@ -17,12 +13,9 @@ const HTTPServer = http.Server(app);
 const sockets = io(HTTPServer);
 
 app.use(cors());
-app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(require('method-override')());
 app.use(express.static(__dirname + '/public'));
-app.use(session({ secret: 'conduit', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false  }));
 
 if (!isProduction) {
   app.use(errorhandler());
@@ -34,6 +27,9 @@ if(isProduction) {
   mongoose.connect('mongodb://localhost/lobby_app_data');
   mongoose.set('debug', true);
 }
+
+require('./models/User');
+require('./config/passport');
 
 app.use(require('./routes'));
 
