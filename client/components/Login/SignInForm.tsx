@@ -6,9 +6,12 @@ import Footer from './Footer';
 
 interface IFormProps {
   handleSubmit?: any;
+  loading: boolean,
+  error?: object,
+  onToggleForm: Function
 }
 
-const LoginForm = (props: IFormProps) => (
+const SignInForm = (props: IFormProps) => (
   <div className="login-form">
     <h1>Lobby</h1>
     <form onSubmit={props.handleSubmit}>
@@ -16,7 +19,7 @@ const LoginForm = (props: IFormProps) => (
       <Input name="password" type="password" placeholder="Password" />
       <ButtonContainer>
         <Button text="Sign In" />
-        <Button text="Register" color={Colors.secondary} />
+        <Button text="Register" color={Colors.secondary} onClick={props.onToggleForm} />
       </ButtonContainer>
     </form>
     <Footer />
@@ -24,5 +27,5 @@ const LoginForm = (props: IFormProps) => (
 );
 
 export default reduxForm({
-  form: 'login'
-})(LoginForm)
+  form: 'signin'
+})(SignInForm)

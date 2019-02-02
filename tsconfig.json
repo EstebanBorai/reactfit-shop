@@ -7,9 +7,19 @@
     "target": "es5",
     "jsx": "react",
     "baseUrl": ".",
+    "lib": [ "es2015", "dom" ],
     "paths": {
+      "actions/*": [
+        "client/actions/*"
+      ],
+      "api/*": [
+        "client/api/*"
+      ],
       "components/*": [
         "client/components/*",
+      ],
+      "containers/*": [
+        "client/containers/*"
       ],
       "reducers/*": [
         "client/reducers/*",

@@ -7,6 +7,7 @@ interface IButtonProps {
   color?: string | ColorClasses;
   textColor?: string | ColorClasses;
   filled?: Boolean;
+  onClick?: Function
 }
 
 const Button = (props: IButtonProps) => {
