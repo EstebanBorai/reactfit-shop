@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Field } from 'redux-form';
-import './input.styl';
+import './form.styl';
 
 interface IInputProps {
   name: string;
@@ -10,7 +10,7 @@ interface IInputProps {
 }
 
 const Input = (props: IInputProps) => (
-  <div className="lobby-input">
+  <div className="lobby-form-input-default lobby-input">
     { props.label ? <label>{props.label}</label> : null }
     <Field
       name={props.name}

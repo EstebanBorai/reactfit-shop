@@ -1,4 +1,4 @@
-import SignInForm from 'components/Login/SignInForm';
+import SignInForm from 'components/Authenticate/SignInForm';
 import { connect } from 'react-redux';
 import {  bindActionCreators } from 'redux'; 
 import { signIn } from 'actions/auth';

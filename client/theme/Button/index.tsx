@@ -4,10 +4,11 @@ import { colorClasses, ColorClasses } from '../colors';
 
 interface IButtonProps {
   text: string;
+  type?: string;
   color?: string | ColorClasses;
   textColor?: string | ColorClasses;
   filled?: Boolean;
-  onClick?: Function
+  onClick?: any;
 }
 
 const Button = (props: IButtonProps) => {
@@ -20,7 +21,7 @@ const Button = (props: IButtonProps) => {
   }
 
   return (
-    <button className="lobby-button" style={buttonStyle}>
+    <button className="lobby-button" style={buttonStyle} type={props.type} onClick={props.onClick}>
       <span style={buttonTextStyle}>{props.text}</span>
     </button>
   );
