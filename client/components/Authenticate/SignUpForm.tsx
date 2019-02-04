@@ -22,6 +22,7 @@ const SignUpForm = (props: IFormProps) => (
       <Input name="firstName" placeholder="First Name" />
       <Input name="lastName" placeholder="Last Name" />
       <Input name="email" placeholder="Email" type="email" />
+      <Input name="country" placeholder="Country" />
       <Input name="username" placeholder="Username" />
       <Input name="password" placeholder="Password" type="password" />
       <Input name="passwordCheck" placeholder="Retype Password" type="password" />

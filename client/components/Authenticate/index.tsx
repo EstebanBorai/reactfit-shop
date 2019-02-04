@@ -2,7 +2,7 @@ import * as React from 'react';
 import './login.styl';
 import AdContainer from './AdContainer';
 import SignInForm from 'containers/Authenticate/SignInForm';
-import SignUpForm from './SignUpForm';
+import SignUpForm from 'containers/Authenticate/SignUpForm';
 
 interface IAuthenticateState {
   signUp: boolean
