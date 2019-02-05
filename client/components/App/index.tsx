@@ -1,18 +1,17 @@
 import * as React from 'react';
 import './app.styl';
-import Chat from 'components/Chat';
+import Dashboard from 'components/Dashboard';
 import Authenticate from 'components/Authenticate';
+import IUser from 'types/IUser';
 
-const logged = null;
-
-class App extends React.Component {
-  render() {
-    return (
-      <div className="app-container">
-        { logged ? <Chat /> : <Authenticate /> }
-      </div>
-    );
-  }
+interface IAppProps {
+  logged?: IUser;
 }
+
+const App = (props: IAppProps) => (
+  <div className="app-container">
+    { props.logged ? <Dashboard /> : <Authenticate /> }
+  </div>
+);
 
 export default App;

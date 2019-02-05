@@ -18,7 +18,7 @@ const SignInForm = (props: IFormProps) => (
       <Input name="username" placeholder="Username" />
       <Input name="password" type="password" placeholder="Password" />
       <ButtonContainer>
-        <Button text="Sign In" type="submit" />
+        <Button text="Sign In" type="submit" theme="primary" />
         <Button text="Register" color={Colors.secondary} onClick={props.onToggleForm} />
       </ButtonContainer>
     </form>

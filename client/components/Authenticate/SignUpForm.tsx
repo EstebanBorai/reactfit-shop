@@ -28,7 +28,7 @@ const SignUpForm = (props: IFormProps) => (
       <Input name="passwordCheck" placeholder="Retype Password" type="password" />
       <Select name="genre" options={genreOptions} placeholder="Genre" />
       <ButtonContainer>
-        <Button text="Sign Up" />
+        <Button text="Sign Up" theme="primary" />
         <Button text="Sign In" color={Colors.secondary} onClick={props.onToggleForm} />
       </ButtonContainer>
     </form>

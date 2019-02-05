@@ -1,11 +1,12 @@
 import * as React from 'react';
 import './button.styl';
-import { colorClasses, ColorClasses } from '../colors';
+import { colorClasses, ColorClasses, Colors, Theme } from '../colors';
 
 interface IButtonProps {
   text: string;
   type?: string;
   color?: string | ColorClasses;
+  theme?: Theme;
   textColor?: string | ColorClasses;
   filled?: Boolean;
   onClick?: any;
@@ -13,11 +14,11 @@ interface IButtonProps {
 
 const Button = (props: IButtonProps) => {
   const buttonStyle = {
-    background: colorClasses['primary'].background || colorClasses.primary.background
+    background: props.theme ? colorClasses[props.theme].background : 'transparent'
   }
 
   const buttonTextStyle = {
-    color: colorClasses['primary'].color
+    color: props.theme ? colorClasses[props.theme].color : Colors.textDark
   }
 
   return (

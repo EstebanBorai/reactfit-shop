@@ -1,14 +1,16 @@
-enum Colors {
-  primary = '#226E84',
-  secondary = '#F1F1F1',
-  positive = '#60DD6B',
-  negative = '#B72D44',
-  warning = '#FFD234',
-  info = '#4FA7DF',
+export enum Colors {
+  primary = '#24B4A5',
+  secondary = '#81D6AF',
+  positive = '#1DC153',
+  negative = '#CB1A1B',
+  warning = '#FDD741',
+  info = '#F4F3ED',
   disabled = '#B4C8DF',
   textLigth = '#FFFFFF',
   textDark = '#111111'
 }
+
+export type Theme = "primary" | "secondary" | "positive" | "negative" | "warning" | "info" | "disabled";
 
 export enum ColorClasses {
   primary,
@@ -27,7 +29,7 @@ export const colorClasses = {
   },
   secondary: {
     background: Colors.secondary,
-    color: Colors.textDark
+    color: Colors.textLigth
   },
   positive: {
     background: Colors.positive,
