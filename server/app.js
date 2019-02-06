@@ -25,10 +25,14 @@ if(isProduction) {
 
 app.use(cors());
 app.use(session({
+  name: 'session',
   secret: 'session-secret',
   store: new MongoStore({ mongooseConnection: mongoose.connection }),
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 24 * 360000
+  }
 }));
 app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: false }));
