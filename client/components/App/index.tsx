@@ -6,12 +6,22 @@ import IUser from 'types/IUser';
 
 interface IAppProps {
   logged?: IUser;
+  onMount: Function;
 }
 
-const App = (props: IAppProps) => (
-  <div className="app-container">
-    { props.logged ? <Dashboard /> : <Authenticate /> }
-  </div>
-);
+class App extends React.Component<IAppProps, {}> {
+  componentDidMount() {
+    this.props.onMount();
+  }
+
+  render() {
+    const { logged } = this.props;
+    return (
+      <div className="app-container">
+        { logged ? <Dashboard /> : <Authenticate /> }
+      </div>
+    );
+  }
+}
 
 export default App;

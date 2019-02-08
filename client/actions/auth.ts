@@ -26,3 +26,14 @@ export const signUp = user => async dispatch => {
     dispatch({ type: FAIL, error });
   }
 };
+
+export const ME = `${AUTH}/ME`;
+export const me = () => async dispatch => {
+  dispatch({ type: REQUEST });
+  try {
+    const me = await authAPI.me();
+    dispatch({ type: ME, logged: me });
+  } catch (error) {
+    dispatch({ type: FAIL, error });
+  }
+}

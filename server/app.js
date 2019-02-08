@@ -10,6 +10,7 @@ const MongoStore = require('connect-mongo')(session);
 const io = require('socket.io');
 const startSockets = require('./startSockets');
 const passport = require('passport');
+const cookieParser = require('cookie-parser');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const app = express();
@@ -24,18 +25,20 @@ if(isProduction) {
   mongoose.set('debug', true);
 }
 
-app.use(cors());
+app.use(cors({ origin: ['http://localhost:8080'], credentials: true }));
 app.use(session({
-  name: 'session',
-  secret: 'session-secret',
+  name: 'sid',
+  secret: '43nkcv3zru809uh9u7g9',
   store: new MongoStore({ mongooseConnection: mongoose.connection }),
-  resave: true,
-  saveUninitialized: true,
+  resave: false,
+  saveUninitialized: false,
   cookie: {
-    maxAge: 24 * 360000
+    maxAge: 24 * 360000,
+    sameSite: false,
+    secure: false
   }
 }));
-app.use(require('cookie-parser')());
+app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(morgan('combined'));

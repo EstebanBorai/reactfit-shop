@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from 'reducers/index';
 import thunk from 'redux-thunk';
+import axios from 'axios';
 
 declare global {
   interface Window { 
@@ -14,6 +15,8 @@ declare global {
 
   const API_URL: string;
 }
+
+axios.defaults.withCredentials = true;
 
 const rootElement = 'app';
 const store = createStore(

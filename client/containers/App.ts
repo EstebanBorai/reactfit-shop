@@ -1,8 +1,17 @@
 import App from 'components/App';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { me as onMount } from 'actions/auth';
 
 const mapStateToProps = state => ({
   logged: state.app.logged
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => bindActionCreators(
+  {
+    onMount
+  }, 
+  dispatch
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

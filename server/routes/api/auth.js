@@ -1,15 +1,18 @@
 const router = require('express').Router();
 const User = require('../../models/User');
+const basicAuth = require('../../tools/functions').basicAuth;
 
 router.post('/signin', (req, res) => {
-  const { username, password } = req.body;
+  const authorizationHeader = req.headers.authorization;
+  const { username, password } = basicAuth(authorizationHeader);
   User.findOne({ username }, (error, user) => {
-    if (req.body === null) {
+    if (authorizationHeader === null) {
       return res.status(400).send({
-        message: 'User not found'
+        message: 'Credentials are required'
       });
     } else {
       if (user.checkPassword(password)) {
+        req.session.user = user; 
         return res.status(201).send(user);
       } else {
         return res.status(400).send({ 
@@ -47,6 +50,14 @@ router.post('/signup', (req, res, next) => {
       return res.status(201).send(user);
     }
   });
+});
+
+router.get('/me', (req, res, next) => {
+  if (req.session.user) {
+    return res.status(201).send(req.session.user);
+  }
+
+  return res.status(401).send();
 });
 
 module.exports = router;

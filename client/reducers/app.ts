@@ -1,4 +1,4 @@
-import { SIGN_IN, SIGN_UP } from 'actions/auth';
+import { SIGN_IN, SIGN_UP, ME } from 'actions/auth';
 
 const reducer = (state = {
   logged: null,
@@ -7,6 +7,7 @@ const reducer = (state = {
   switch(action.type) {
     case SIGN_IN:
     case SIGN_UP:
+    case ME:
       return { ...state, logged: action.logged };
     default:
       return state;
