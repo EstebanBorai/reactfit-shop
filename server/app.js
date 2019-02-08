@@ -9,6 +9,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const io = require('socket.io');
 const startSockets = require('./startSockets');
+const passport = require('passport');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const app = express();
@@ -34,6 +35,9 @@ app.use(session({
     maxAge: 24 * 360000
   }
 }));
+app.use(require('cookie-parser')());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
