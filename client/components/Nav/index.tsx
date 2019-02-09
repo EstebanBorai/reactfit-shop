@@ -8,9 +8,9 @@ const Nav = () => (
   <nav className="lobby-nav">
     <UserHeader />
     <ul>
-      <NavItem icon={faComments} active notify />
-      <NavItem icon={faAddressBook} />
-      <NavItem icon={faUsers} />
+      <NavItem icon={faComments} to="/" notify />
+      <NavItem icon={faUsers} to="/groups" />
+      <NavItem icon={faAddressBook} to="/contacts" />
     </ul>
   </nav>
 );

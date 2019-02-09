@@ -5,7 +5,6 @@
   background: #373737
   color: #ffffff
   text-align: center
-  padding: .5rem 0
   box-sizing: border-box
   height: 100vh
 
@@ -29,6 +28,9 @@
       cursor: pointer
       border-left: 3px solid transparent
       position: relative
+      text-decoration: none !important
+      color: #ffffff
+
       &:hover
         background: #484848
         transition: .2s
@@ -40,7 +42,8 @@
       top: 0
       right: 0
       margin: .6rem
-
-    .nav-item.active
-      border-color: primary
-      background: #484848
+  
+  .active
+      .nav-item
+        border-color: primary
+        background: #484848

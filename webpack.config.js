@@ -61,7 +61,8 @@ module.exports = (env, args) => ({
   devServer: {
     contentBase: path.join(__dirname, 'client'),
     compress: true,
-    port: 8080
+    port: 8080,
+    historyApiFallback: true
   },
   plugins: [
     new HotModuleReplacementPlugin(),
