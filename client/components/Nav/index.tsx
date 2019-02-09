@@ -1,15 +1,16 @@
 import * as React from 'react';
 import './nav.styl';
+import UserHeader from './UserHeader';
+import NavItem from './NavItem';
+import { faComments, faAddressBook, faUsers, faUser } from '@fortawesome/free-solid-svg-icons'
 
-const Nav = (props) => (
+const Nav = () => (
   <nav className="lobby-nav">
-    <header>
-      User
-    </header>
+    <UserHeader />
     <ul>
-      <li>
-        Menu Item
-      </li>
+      <NavItem icon={faComments} active notify />
+      <NavItem icon={faAddressBook} />
+      <NavItem icon={faUsers} />
     </ul>
   </nav>
 );
