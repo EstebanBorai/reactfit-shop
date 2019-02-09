@@ -1,2 +1,2 @@
 # Lobby
-> WebSockets Chat Application
+> 🛎 WebSockets Chat Application

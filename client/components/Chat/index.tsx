@@ -1,5 +1,8 @@
 import * as React from 'react';
+import './chat.styl';
 import * as io from 'socket.io-client';
+import Management from './Management';
+import Conversation from './Conversation';
 
 const socket = io.connect('http://localhost:3001')
 
@@ -27,10 +30,10 @@ class Chat extends React.Component<{}, IChatState> {
 
   render() {
     return (
-      <div>
-        Hello from Chat
-        {JSON.stringify(this.state.callback)}
-      </div>
+      <section className="lobby-chat">
+        <Management />
+        <Conversation />
+      </section>
     );
   }
 }

@@ -13,7 +13,6 @@ const Dashboard = () => (
       <main>
         <Switch>
           <Route exact path="/" component={Chat} />
-          <Route path="/groups" component={Aside} />
           <Route path="/contacts" component={Contacts} />
           <Route component={NoMatch} />
         </Switch>
