@@ -1,5 +1,5 @@
 import * as React from 'react';
-import '../chat.styl';
+import './conversation.styl';
 
 class Conversation extends React.Component {
   render() {
