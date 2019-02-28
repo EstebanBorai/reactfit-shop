@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './app.styl';
-import Dashboard from 'components/Dashboard';
+import Dashboard from 'containers/Dashboard';
 import Authenticate from 'components/Authenticate';
 import IUser from 'types/IUser';
 
