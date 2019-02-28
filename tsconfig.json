@@ -24,6 +24,9 @@
       "reducers/*": [
         "client/reducers/*",
       ],
+      "selectors/*": [
+        "client/selectors/*"
+      ],
       "theme/*": [
         "client/theme/*",
       ],

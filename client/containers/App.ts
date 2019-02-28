@@ -4,7 +4,8 @@ import { bindActionCreators } from 'redux';
 import { me as onMount } from 'actions/auth';
 
 const mapStateToProps = state => ({
-  logged: state.app.logged
+  logged: state.app.logged,
+  loading: state.app.loading
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(
