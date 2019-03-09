@@ -1,25 +1,17 @@
 const router = require('express').Router();
-const User = require('../../models/User');
 
-router.get('/', (req, res) => {
-  User.find({}, function(error, users) {
-    if (!error) {
-      return res.status(200).send(users);
-    }
-    return res.status(500).send(error);
-  });
-});
+// TODO: Saves user in some database. For now "generate" an UUID 
+router.post('/:username', function(req, res) {
+  const username = req.params.username;
 
-router.get('/:userId', (req, res) => {
-   User.find({ _id: req.params.userId }, function(error, user) {
-     if (!error) {
-       if (user) {
-         return res.status(200).send(user[0]);
-       }
-       return res.status(404).send('No user found.');
-     }
-     return res.status(500).send(error);
-   });
+  if (username) {
+    res.status(200).send({
+      id: '', // TODO: Generate an UUID 
+      username
+    });
+  } else {
+    res.status(400).send('Missing username');
+  }
 });
 
 module.exports = router;

@@ -1,0 +1,36 @@
+.conversation {
+  grid-row: 2 / 2;
+  margin: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+  list-style-type: none;
+
+  .message-item {
+    display: inline-block;
+    width: 100%;
+    margin-top: 1rem;
+
+    .body {
+      display: inline-block;
+      max-width: 60%;
+      padding: .6rem .4rem;
+      box-sizing: border-box;
+      border-radius: .4rem;
+      background: #ffffff;
+      box-shadow: 1px 3px 8px #b3b3b3aa;
+
+      &.receiver-message {
+        background: #eff0ff;
+      }
+
+      &.transmitter-message {
+        background: #7781ff;
+        color: #ffffff;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

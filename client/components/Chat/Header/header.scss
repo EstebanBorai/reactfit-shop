@@ -1,0 +1,99 @@
+.chat-header {
+  background: #7781ff;
+  color: #ffffff;
+  padding: 10px 1rem;
+  box-sizing: border-box;
+  height: 60px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  grid-row: 1 / 1;
+
+  .chat-concept {
+    width: 100%;
+    height: 40px;
+    grid-column: 1 / 1;
+    display: flex;
+    align-items: center;
+
+    .header-avatar {
+      height: 40px;
+      width: 40px;
+      margin-right: 10px;
+      border-radius: 100px;
+      position: relative;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+      }
+
+      .status-dot {
+        height: 9px;
+        width: 9px;
+        border-radius: 100px;
+        background: #fffe74;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    .main-data {
+      display: inline-block;
+      width: calc(100% - 60px);
+
+      h4, span {
+        display: block;
+      }
+
+      h4 {
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      span {
+        margin-top: 5px;
+        font-size: .9rem;
+        color: #fffe74;
+      }
+    }
+  }
+
+  .chat-options {
+    list-style-type: none;
+    grid-column: 2 / 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      font-size: 25px;
+      margin-right: 15px;
+      height: 100%;
+      color: #5a63bd;
+      background: transparent;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover, &.active {
+        color: #ffffff;
+        // TODO: Add shadow to icons on hover, active 
+        // box-shadow: 0 5px .5rem #0a0a0a66;
+      }
+    }
+  }
+}

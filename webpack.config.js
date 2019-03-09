@@ -35,6 +35,14 @@ module.exports = (env, args) => ({
         ]
       },
       {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      },
+      {
         test: /\.(png|jpg|gif|svg)$/,
         use: [
           {
@@ -68,12 +76,12 @@ module.exports = (env, args) => ({
     new DefinePlugin({
       API_URL:
         args.mode === 'development'
-          ? JSON.stringify('http://localhost:3000/api')
+          ? JSON.stringify('http://localhost:9090/api')
           : ''
     })
   ],
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.styl'],
+    extensions: ['.js', '.ts', '.tsx'],
     alias: {
       actions: path.resolve(__dirname, 'client/actions'),
       api: path.resolve(__dirname, 'client/api'),
