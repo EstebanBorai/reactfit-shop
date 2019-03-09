@@ -34,10 +34,6 @@ module.exports = (env, args) => ({
           'css-loader'
         ]
       },
-      { 
-        test: /\.styl$/, 
-        loader: 'style-loader!css-loader!stylus-loader' 
-      },
       {
         test: /\.(png|jpg|gif|svg)$/,
         use: [
