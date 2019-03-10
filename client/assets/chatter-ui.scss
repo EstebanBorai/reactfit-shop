@@ -1,0 +1,62 @@
+@function hover-dark($color) {
+  @return mix($color, #303030, 85%);
+}
+
+$primary: #7781ff;
+
+$border-radius-default: .4rem;
+
+%form-item  {
+  border: none;
+  padding: .5rem .9rem;
+  box-sizing: border-box;
+  font-size: .9rem;
+  margin: .2rem;
+  background: #ffffff;
+  border-radius: $border-radius-default;
+  border: 1px solid transparent;
+}
+
+.c-btn {
+  @extend %form-item;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.primary {
+  background: $primary;
+  color: #ffffff;
+
+  &:hover {
+    background: hover-dark($primary);
+    transition: .2s;
+  }
+}
+
+.c-form {
+  input {
+    &[type="text"],
+    &[type="number"],
+    &[type="email"] {
+      @extend %form-item;
+      border: 1px solid #ffffff;
+
+      &:active, &:focus {
+        border-color: $primary;
+      }
+    
+      &:hover {
+        border-color: #cfcfcf;
+      }
+    }
+  }
+}
+
+.c-info {
+  max-width: 80%;
+  margin: .5rem auto;
+  background: lighten($primary, 20%);
+  padding: .5rem 1rem;
+  box-sizing: border-box;
+  border-radius: $border-radius-default;
+}

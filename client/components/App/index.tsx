@@ -1,10 +1,10 @@
 import * as React from 'react';
 import './app.scss';
-import Chat from 'components/Chat';
+import SignIn from 'components/SignIn';
 
 const App = () => (
   <div className="app-main">
-    <Chat />
+    <SignIn />
   </div>
 )
 

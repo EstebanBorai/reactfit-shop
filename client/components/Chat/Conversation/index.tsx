@@ -5,7 +5,7 @@ import Message from './Message';
 const Conversation = () => (
   <ol className="conversation">
     <Message text="Hello" />
-    <Message text="A very long message start like this and spread to the whole screen. Breaking my CSS." />
+    <Message text="A very long message start like this and spread taking the whole screen. Breaking my CSS." />
   </ol>
 );
 

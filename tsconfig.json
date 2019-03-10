@@ -9,30 +9,9 @@
     "baseUrl": ".",
     "lib": [ "es2015", "dom" ],
     "paths": {
-      "actions/*": [
-        "client/actions/*"
-      ],
-      "api/*": [
-        "client/api/*"
-      ],
       "components/*": [
         "client/components/*",
       ],
-      "containers/*": [
-        "client/containers/*"
-      ],
-      "reducers/*": [
-        "client/reducers/*",
-      ],
-      "selectors/*": [
-        "client/selectors/*"
-      ],
-      "theme/*": [
-        "client/theme/*",
-      ],
-      "types/*": [
-        "client/types/*"
-      ]
     }
   },
   "include": [

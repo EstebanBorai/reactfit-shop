@@ -1,0 +1,42 @@
+.sign-in {
+  header {
+    background: #7781ff;
+    color: #ffffff;
+    padding: 10px 1rem;
+    box-sizing: border-box;
+    height: 60px;
+
+    h2 {
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  main {
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    form {
+      input {
+        text-align: center;
+      }
+    }
+  }
+
+  .copyright-terms {
+    font-size: .8rem;
+    color: #757575;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+
+    p {
+      font-size: .7rem;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+  }
+}
