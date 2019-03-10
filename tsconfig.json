@@ -9,11 +9,20 @@
     "baseUrl": ".",
     "lib": [ "es2015", "dom" ],
     "paths": {
+      "assets/*": [
+        "client/assets/*",
+      ],
       "components/*": [
         "client/components/*",
       ],
+      "helpers/*": [
+        "client/helpers/*",
+      ],
       "pages/*": [
         "client/pages/*",
+      ],
+      "reducers/*": [
+        "client/reducers/*",
       ],
     }
   },

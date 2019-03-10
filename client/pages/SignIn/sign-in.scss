@@ -34,9 +34,14 @@
     position: absolute;
     bottom: 0;
 
-    p {
+    span, em {
       font-size: .7rem;
-      padding: 0 1rem;
+      text-align: center;
+      display: block;
+    }
+
+    em {
+      padding-top: .5rem;
       box-sizing: border-box;
     }
   }

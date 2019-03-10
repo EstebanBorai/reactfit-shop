@@ -13,6 +13,7 @@ module.exports = (env, args) => ({
     filename: '[name]/index.js',
     path: path.resolve(__dirname, 'bundle')
   },
+  devtool: 'source-maps',
   module: {
     rules: [
       {
@@ -83,8 +84,11 @@ module.exports = (env, args) => ({
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
     alias: {
+      assets: path.resolve(__dirname, 'client/assets'),
       components: path.resolve(__dirname, 'client/components'),
-      pages: path.resolve(__dirname, 'client/pages')
+      helpers: path.resolve(__dirname, 'client/helpers'),
+      pages: path.resolve(__dirname, 'client/pages'),
+      reducers: path.resolve(__dirname, 'client/reducers')
     } 
   }
 });

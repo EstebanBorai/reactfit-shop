@@ -2,10 +2,15 @@ import * as React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 
-
 interface IReduxFormInput {
   value: string;
   onChange: any;
+}
+
+interface IReduxFormMeta {
+  error?: string;
+  warning?: string;
+  touched: boolean;
 }
 
 interface IInputFieldProps {
@@ -15,6 +20,7 @@ interface IInputFieldProps {
   placeholder?: string;
   info?: string;
   input: IReduxFormInput;
+  meta: IReduxFormMeta;
 };
 
 const InputField = (props: IInputFieldProps) => {
@@ -46,18 +52,21 @@ const InputField = (props: IInputFieldProps) => {
         null
       }
       <input
+        {...props.input}
         type={props.type}
         name={props.name}
         placeholder={props.placeholder}
         value={props.input.value}
         onChange={props.input.onChange}
       />
-      <em className="help-text warning">
-        <span>
-          Help text
-        </span>
-        <FontAwesomeIcon icon={faExclamationTriangle} />
-      </em>
+      {
+        props.meta.touched && props.meta.error ?
+        <em className={`help-text${props.meta.error ? ' error' : props.meta.warning ? ' warning' : ''}`}>
+          <span dangerouslySetInnerHTML={JSON.parse(props.meta.error)}></span>
+          <FontAwesomeIcon icon={faExclamationTriangle} />
+        </em> :
+        null
+      }
     </div>
   );
 };
