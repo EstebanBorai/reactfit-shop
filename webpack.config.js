@@ -83,7 +83,8 @@ module.exports = (env, args) => ({
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
     alias: {
-      components: path.resolve(__dirname, 'client/components')
+      components: path.resolve(__dirname, 'client/components'),
+      pages: path.resolve(__dirname, 'client/pages')
     } 
   }
 });

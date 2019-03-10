@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './app.scss';
-import SignIn from 'components/SignIn';
+import SignIn from 'pages/SignIn';
 
 const App = () => (
   <div className="app-main">

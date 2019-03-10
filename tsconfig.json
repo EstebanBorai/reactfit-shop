@@ -12,6 +12,9 @@
       "components/*": [
         "client/components/*",
       ],
+      "pages/*": [
+        "client/pages/*",
+      ],
     }
   },
   "include": [

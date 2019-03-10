@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './sign-in.scss';
+import { InputField } from 'components/Form';
 
 const randomUsernames = [
   'intelligent_zombie',
@@ -22,19 +23,21 @@ const SignIn = () => {
   return (
     <section className="sign-in">
       <header>
-        <h2>Welcome to Chatter</h2>
+        <h1 className="c-heading">Welcome to Chatter!</h1>
       </header>
       <main>
-        <h3>Enter your username</h3>
+        <h3>Lets start by creating an username!</h3>
         <form className="c-form">
-          <input type="text" placeholder={randomUsername} />
+          <InputField 
+            label="Username"
+            name="username"
+            type="text"
+            placeholder={randomUsername}
+          />
         </form>
         <button className="c-btn primary">
           Chat now
         </button>
-        <p className="c-info">
-          Give yourself a username so people can recognize you in the chat!
-        </p>
         <p className="copyright-terms">
           <p>
             By clicking Chat now, you agree to our Terms, Data Policy and Cookies Policy.

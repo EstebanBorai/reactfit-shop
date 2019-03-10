@@ -1,17 +1,27 @@
 const router = require('express').Router();
+const User = require('../../models/User');
+const { BAD_REQUEST, CREATED } = require('http-status-codes');
 
-// TODO: Saves user in some database. For now "generate" an UUID 
-router.post('/:username', function(req, res) {
+router.post('/signin/:username', (req, res) => {
   const username = req.params.username;
 
-  if (username) {
-    res.status(200).send({
-      id: '', // TODO: Generate an UUID 
-      username
+  User.findOne({ username }, (err, user) => { 
+    if (err) {
+      throw err;
+    }
+
+    if (user) {
+      res.status(BAD_REQUEST).send('Username taken');
+    }
+
+    User.create({ username }, function(error, created) {
+      if (error) {
+        throw error;
+      }
+
+      res.status(CREATED).send(created);
     });
-  } else {
-    res.status(400).send('Missing username');
-  }
+  })
 });
 
 module.exports = router;
