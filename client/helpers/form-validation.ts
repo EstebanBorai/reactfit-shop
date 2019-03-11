@@ -12,12 +12,22 @@ export function required(value: any) {
   return toDangerouslySetInnerHTML('Required');
 }
 
-export function maxLength(max) {
+export function maxLength(max: number) {
   return function(value) {
     if (value && value.length > max) {
       return toDangerouslySetInnerHTML(`Must be ${max} characters or less.`);
     }
     
+    return undefined;
+  }
+}
+
+export function minLength(min: number) {
+  return function(value) {
+    if (value && value.length < min) {
+      return toDangerouslySetInnerHTML(`Must be ${min} characters or more.`);
+    }
+
     return undefined;
   }
 }
