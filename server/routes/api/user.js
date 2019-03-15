@@ -2,26 +2,30 @@ const router = require('express').Router();
 const User = require('../../models/User');
 const { BAD_REQUEST, CREATED } = require('http-status-codes');
 
-router.post('/signin/:username', (req, res) => {
-  const username = req.params.username;
+router.post('/signup/', async (req, res, next) => {
+  try {
+    const user = req.body;
 
-  User.findOne({ username }, (err, user) => { 
-    if (err) {
-      throw err;
+    if (!user) {
+      return res.status(BAD_REQUEST).send('User is required.');
     }
+    
+    const isUsernameTaken = await User.findOne({ username: user.username });
 
-    if (user) {
-      res.status(BAD_REQUEST).send('Username taken');
+    if (isUsernameTaken) {
+      return res.status(BAD_REQUEST).send(`${user.username} is taken.`);
     }
-
-    User.create({ username }, function(error, created) {
+    
+    User.create(user, function (error, created) {
       if (error) {
         throw error;
       }
 
-      res.status(CREATED).send(created);
+      return res.status(CREATED).send(created);
     });
-  })
+  } catch (ex) {
+    next(ex);
+  }
 });
 
 module.exports = router;

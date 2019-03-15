@@ -9,6 +9,12 @@
     "baseUrl": ".",
     "lib": [ "es2015", "dom" ],
     "paths": {
+      "actions/*": [
+        "client/actions/*"
+      ],
+      "api/*": [
+        "client/api/*"
+      ],
       "assets/*": [
         "client/assets/*",
       ],
