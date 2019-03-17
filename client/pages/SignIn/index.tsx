@@ -23,7 +23,7 @@ const randomUsernames = [
 const maxLength20 = maxLength(20);
 const minLength3 = minLength(3);
 
-const SignIn = () => {
+const SignIn = (props) => {
   const [randomUsername, setRandomUsername] = React.useState('');
   const [step, setStep] = React.useState(steps.USERNAME);
   
@@ -31,7 +31,16 @@ const SignIn = () => {
     setRandomUsername(randomUsernames[Math.floor(Math.random() * ((randomUsernames.length - 1) - 0)) + 0]);
   }, []);
 
-  const handleContinue = () => setStep(steps.AVATAR);
+  const handleContinue = () => {
+    if (step === steps.USERNAME) {
+      setStep(steps.AVATAR);
+    }
+    return null;
+  };
+
+  const handleSubmit = formData => {
+    props.handleSubmit(formData);
+  }
 
   return (
     <section className="sign-in">
@@ -46,7 +55,7 @@ const SignIn = () => {
             'Lets start by creating an username!'
           }
         </h3>
-        <form className="c-form">
+        <form className="c-form" onSubmit={handleSubmit}>
           {
             step === steps.AVATAR ?
             <div className="preview-avatar">
@@ -61,20 +70,47 @@ const SignIn = () => {
             component={InputField}
             validate={[required, maxLength20, username, minLength3]}
           />
+          <Field
+            name="firstName"
+            type="text"
+            placeholder="John"
+            component={InputField}
+            validate={required}
+          />
+          <Field
+            name="lastName"
+            type="text"
+            placeholder="Gates"
+            component={InputField}
+            validate={required}
+          />
+          <Field
+            name="country"
+            type="text"
+            placeholder="Gates"
+            component={InputField}
+            validate={required}
+          />
+          <footer className="c-item c-center">
+            <button
+              className="c-btn primary" 
+              onClick={handleContinue} 
+              type={step === steps.AVATAR ? 'submit' : 'button'}
+            >
+              {
+                step === steps.AVATAR ?
+                'Chat now' :
+                'Continue'
+              }
+            </button>
+          </footer>
+          <p className="copyright-terms">
+            <span>
+              By clicking Chat now, you agree to our Terms, Data Policy and Cookies Policy.
+            </span>
+            <em>Chatter, Inc &copy; {new Date().getFullYear()}</em>
+          </p>
         </form>
-        <button className="c-btn primary" onClick={handleContinue}>
-          {
-            step === steps.AVATAR ?
-            'Chat now' :
-            'Continue'
-          }
-        </button>
-        <p className="copyright-terms">
-          <span>
-            By clicking Chat now, you agree to our Terms, Data Policy and Cookies Policy.
-          </span>
-          <em>Chatter, Inc &copy; {new Date().getFullYear()}</em>
-        </p>
       </main>
     </section>
   )

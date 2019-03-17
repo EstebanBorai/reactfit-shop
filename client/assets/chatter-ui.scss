@@ -122,3 +122,16 @@ $border-radius-default: .4rem;
   box-sizing: border-box;
   border-radius: $border-radius-default;
 }
+
+// misc 
+
+.c-item {
+  padding: .25rem;
+  box-sizing: border-box;
+}
+
+.c-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
