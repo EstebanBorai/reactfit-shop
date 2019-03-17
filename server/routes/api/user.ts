@@ -1,6 +1,8 @@
-const router = require('express').Router();
-const User = require('../../models/User');
-const { BAD_REQUEST, CREATED } = require('http-status-codes');
+import { Router } from 'express';
+import User from '../../models/User';
+import { BAD_REQUEST, CREATED } from 'http-status-codes';
+
+const router = Router();
 
 router.post('/signup/', async (req, res, next) => {
   try {
@@ -28,4 +30,4 @@ router.post('/signup/', async (req, res, next) => {
   }
 });
 
-module.exports = router;
+export default router;

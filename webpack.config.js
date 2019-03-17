@@ -90,7 +90,8 @@ module.exports = (env, args) => ({
       components: path.resolve(__dirname, 'client/components'),
       helpers: path.resolve(__dirname, 'client/helpers'),
       pages: path.resolve(__dirname, 'client/pages'),
-      reducers: path.resolve(__dirname, 'client/reducers')
+      reducers: path.resolve(__dirname, 'client/reducers'),
+      types: path.resolve(__dirname, 'types')
     } 
   }
 });

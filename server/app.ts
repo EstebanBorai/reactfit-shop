@@ -5,6 +5,7 @@ import * as morgan from 'morgan';
 import * as bodyParser from 'body-parser';
 import * as errorhandler from 'errorhandler';
 import * as mongoose from 'mongoose';
+import routes from './routes';
 
 const app = express();
 
@@ -24,11 +25,8 @@ app.use(errorhandler());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// // models
-// require('./models/User');
-
-// // routes
-// app.use(require('./routes'));
+// routes
+app.use(routes);
 
 app.listen(9090, function() {
   console.log('Listening 9090');

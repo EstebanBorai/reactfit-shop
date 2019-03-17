@@ -29,6 +29,9 @@
       ],
       "reducers/*": [
         "client/reducers/*",
+      ],
+      "types/*": [
+        "types/*"
       ]
     }
   },
