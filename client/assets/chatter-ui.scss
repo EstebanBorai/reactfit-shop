@@ -15,10 +15,14 @@ $border-radius-default: .4rem;
   letter-spacing: .1rem;
 }
 
-%form-item  {
-  border: none;
+%c-action-measure {
   padding: .5rem .9rem;
   box-sizing: border-box;
+}
+
+%form-item  {
+  @extend %c-action-measure;
+  border: none;
   font-size: .9rem;
   margin: .2rem;
   background: #ffffff;
@@ -65,6 +69,20 @@ $border-radius-default: .4rem;
     max-width: 210px;
   }
 
+  .c-fieldset {
+    border: none;
+    padding: .25rem;
+    box-sizing: border-box;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+
+    &.c-two-fields {
+      gap: .4rem;
+      grid-template-columns: 50% 50%;
+    }
+  }
+
   input {
     &[type="text"],
     &[type="number"],
@@ -72,6 +90,7 @@ $border-radius-default: .4rem;
       @extend %form-item;
       border: 1px solid #ffffff;
       transition: .2s;
+      width: 100%;
 
       &:active, &:focus {
         border-color: $primary !important;
@@ -95,7 +114,8 @@ $border-radius-default: .4rem;
     padding-bottom: .2rem;
     box-sizing: border-box;
     border-bottom: 1px solid transparent;
-    max-width: 210px;
+    width: 100%;
+    max-width: 100%;
 
     &.error {
       border-color: $error;
@@ -134,4 +154,17 @@ $border-radius-default: .4rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.c-btn-anchor {
+  @extend %c-action-measure;
+  color: $primary;
+  font-weight: 200;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: .9rem;
+
+  &:hover {
+    color: hover-dark($primary);
+  }
 }
