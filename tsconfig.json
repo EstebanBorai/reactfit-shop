@@ -21,6 +21,9 @@
       "components/*": [
         "client/components/*",
       ],
+      "containers/*": [
+        "client/containers/*"
+      ],
       "helpers/*": [
         "client/helpers/*",
       ],

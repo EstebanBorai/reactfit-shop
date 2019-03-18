@@ -88,6 +88,7 @@ module.exports = (env, args) => ({
       actions: path.resolve(__dirname, 'client/actions'),
       assets: path.resolve(__dirname, 'client/assets'),
       components: path.resolve(__dirname, 'client/components'),
+      containers: path.resolve(__dirname, 'client/containers'),
       helpers: path.resolve(__dirname, 'client/helpers'),
       pages: path.resolve(__dirname, 'client/pages'),
       reducers: path.resolve(__dirname, 'client/reducers'),
