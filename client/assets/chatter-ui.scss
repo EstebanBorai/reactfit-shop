@@ -86,7 +86,8 @@ $border-radius-default: .4rem;
   input {
     &[type="text"],
     &[type="number"],
-    &[type="email"] {
+    &[type="email"],
+    &[type="password"] {
       @extend %form-item;
       border: 1px solid #ffffff;
       transition: .2s;

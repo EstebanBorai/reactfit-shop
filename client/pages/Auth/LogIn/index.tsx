@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './sign-in.scss';
+import './log-in.scss';
 import { Field, reduxForm } from 'redux-form';
 import { InputField } from 'components/Form';
 import { required } from 'helpers/form-validation';
@@ -28,7 +28,9 @@ const LogIn = (props) => {
           validate={required}
         />
         <footer className="c-item c-center">
-          <a className="c-btn-anchor">Create an Account</a>
+          <a className="c-btn-anchor" onClick={props.onSignUp} role="button">
+            Create an Account
+          </a>
           <button className="c-btn primary" type="submit">
             Log In
           </button>

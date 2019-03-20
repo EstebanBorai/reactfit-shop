@@ -23,9 +23,13 @@ const randomUsernames = [
 const maxLength20 = maxLength(20);
 const minLength3 = minLength(3);
 
-const SignUp = (props) => {
+interface ISignUpProps {
+  onLogIn: Function;
+  handleSubmit: Function;
+}
+
+const SignUp = (props: ISignUpProps) => {
   const [randomUsername, setRandomUsername] = React.useState('');
-  const [step, setStep] = React.useState(steps.USERNAME);
   
   React.useEffect(() => {
     setRandomUsername(randomUsernames[Math.floor(Math.random() * ((randomUsernames.length - 1) - 0)) + 0]);
@@ -84,7 +88,9 @@ const SignUp = (props) => {
           validate={required}
         />
         <footer className="c-item c-center">
-          <a className="c-btn-anchor">I already have an account</a>
+          <a className="c-btn-anchor" onClick={() => props.onLogIn()} role="button">
+            I already have an account
+          </a>
           <button className="c-btn primary" type="submit">
             Continue
           </button>
