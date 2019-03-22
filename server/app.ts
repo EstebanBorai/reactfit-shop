@@ -6,6 +6,7 @@ import * as bodyParser from 'body-parser';
 import * as errorhandler from 'errorhandler';
 import * as mongoose from 'mongoose';
 import routes from './routes';
+import passportConfig from './config/passport';
 
 const app = express();
 
