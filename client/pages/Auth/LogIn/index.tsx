@@ -4,15 +4,16 @@ import { Field, reduxForm } from 'redux-form';
 import { InputField } from 'components/Form';
 import { required } from 'helpers/form-validation';
 
-const LogIn = (props) => {
-  const handleSubmit = formData => {
-    props.handleSubmit(formData);
-  }
+interface ILogInProps {
+  onSubmit: Function;
+  handleSubmit: Function;
+  onSignUp: Function;
+}
 
-  return (
+const LogIn = (props: ILogInProps) => (
     <section className="log-in">
       <h3>Welcome back to Chatter!</h3>
-      <form className="c-form" onSubmit={handleSubmit}>
+      <form className="c-form" onSubmit={form => props.handleSubmit(form)}>
         <Field
           placeholder="Username"
           name="username"
@@ -28,7 +29,7 @@ const LogIn = (props) => {
           validate={required}
         />
         <footer className="c-item c-center">
-          <a className="c-btn-anchor" onClick={props.onSignUp} role="button">
+          <a className="c-btn-anchor" onClick={() => props.onSignUp} role="button">
             Create an Account
           </a>
           <button className="c-btn primary" type="submit">
@@ -37,8 +38,7 @@ const LogIn = (props) => {
         </footer>
       </form>
     </section>
-  )
-};
+  );
 
 export default reduxForm({
   form: 'login'

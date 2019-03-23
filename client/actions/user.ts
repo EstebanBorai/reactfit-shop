@@ -15,3 +15,14 @@ export const signUp = user => async dispatch => {
     dispatch({ type: FAIL, error });
   }
 };
+
+export const LOG_IN = `${USER}/LOG_IN`;
+export const logIn = credentials => async dispatch => {
+  dispatch({ type: REQUEST });
+  try {
+    const user = await api.logIn(credentials);
+    dispatch({ type: LOG_IN, user });
+  } catch(error) {
+    dispatch({ type: FAIL, error });
+  }
+}

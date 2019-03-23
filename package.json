@@ -8,7 +8,7 @@
   "scripts": {
     "start": "webpack-dev-server --entry ./client/index.tsx --mode development --open",
     "server": "nodemon --watch './server/*.ts' --exec 'ts-node' ./server/app.ts",
-    "server:debug": "node --inspect -r ts-node/register ./server/app.ts"
+    "server-debug": "node --inspect -r ts-node/register ./server/app.ts"
   },
   "license": "MIT",
   "devDependencies": {

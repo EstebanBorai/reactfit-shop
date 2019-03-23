@@ -1,5 +1,5 @@
 import LogIn from 'pages/Auth/LogIn';
-import { signUp as onSubmit } from 'actions/user';
+import { logIn as onSubmit } from 'actions/user';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
