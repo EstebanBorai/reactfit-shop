@@ -2,13 +2,18 @@ import * as React from 'react';
 import './app.scss';
 import Header from 'components/Header';
 import Auth from 'pages/Auth';
+import Chat from 'pages/Chat';
 
-class App extends React.Component {
+interface IAppProps {
+  logged: object;
+}
+class App extends React.Component<IAppProps> {
   render() {
+    const { logged } = this.props;
     return (
       <div className="app-main">
         <Header />
-        <Auth />
+        { logged ? <Chat /> : <Auth /> }
       </div>
     );
   }

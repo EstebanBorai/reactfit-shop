@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from 'components/App';
+import App from 'containers/App';
 import './index.css';
 import './assets/chatter-ui.scss';
 import { createStore, applyMiddleware, compose } from 'redux';

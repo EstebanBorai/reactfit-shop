@@ -1,19 +1,20 @@
 import axios from 'axios';
 import ICredentials from 'types/ICredentials';
-import BasicAuth from 'helpers/BasicAuth';
 
 const URI = API_URL.concat('/user');
 
 export const signUp = async (user) => {
-  return await axios.post(URI.concat('/signup/'), user);
+  return await fetch(URI.concat('/signup/'), {
+    method: 'POST',
+    body: user
+  });
 };
 
 export const logIn = async (credentials: ICredentials) => {
-  const token = new BasicAuth(credentials);
-
-  return await axios.post(URI.concat('/login/'), {
+  return await fetch(URI.concat('/login/'), {
+    method: 'POST',
     headers: {
-      'Authorization': token.hide()
-    },
-  })
+      'Authorization': btoa(`Basic ${credentials.username}:${credentials.password}`)
+    }
+  }).then(response => response.json());
 };
