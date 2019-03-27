@@ -1,17 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DefinePlugin = require('webpack').DefinePlugin;
-const HotModuleReplacementPlugin = require('webpack')
-  .HotModuleReplacementPlugin;
+const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin;
 
-module.exports = (env, args) => ({
-  entry: {
-    client: './client/index.tsx',
-    server: './server/index.js'
-  },
+const config = {
+  entry: './src/index.tsx',
   output: {
     filename: '[name]/index.js',
-    path: path.resolve(__dirname, 'bundle')
+    path: path.resolve(__dirname, 'dist')
   },
   devtool: 'source-maps',
   module: {
@@ -53,13 +48,6 @@ module.exports = (env, args) => ({
             }
           }
         ]
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: 'file-loader',
-        options: {
-          name: 'assets/[name].[ext]'
-        }
       }
     ]
   },
@@ -72,27 +60,15 @@ module.exports = (env, args) => ({
   plugins: [
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: 'client/index.html'
-    }),
-    new DefinePlugin({
-      API_URL:
-        args.mode === 'development'
-          ? JSON.stringify('http://localhost:9090/api')
-          : ''
+      template: 'src/index.html'
     })
   ],
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
     alias: {
-      api: path.resolve(__dirname, 'client/api'),
-      actions: path.resolve(__dirname, 'client/actions'),
-      assets: path.resolve(__dirname, 'client/assets'),
-      components: path.resolve(__dirname, 'client/components'),
-      containers: path.resolve(__dirname, 'client/containers'),
-      helpers: path.resolve(__dirname, 'client/helpers'),
-      pages: path.resolve(__dirname, 'client/pages'),
-      reducers: path.resolve(__dirname, 'client/reducers'),
-      types: path.resolve(__dirname, 'types')
-    } 
-  }
-});
+      components: path.resolve(__dirname, 'src/components')
+    }
+  } 
+};
+
+module.exports = config;
