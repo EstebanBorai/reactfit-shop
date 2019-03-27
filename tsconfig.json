@@ -10,8 +10,14 @@
     "baseUrl": ".",
     "lib": [ "es2015", "dom" ],
     "paths": {
+      "assets/*": [
+        "src/assets/*",
+      ],
       "components/*": [
         "src/components/*",
+      ],
+      "types/*": [
+        "src/types/*",
       ]
     }
   },

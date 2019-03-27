@@ -1,7 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import './index.scss';
+import './assets/theme.scss';
+import App from 'components/App';
 
 ReactDOM.render(
-  <h1>Welcome to reactfit-shop</h1>,
+  <App />,
   document.getElementById('app')
 );

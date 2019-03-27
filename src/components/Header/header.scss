@@ -1,0 +1,22 @@
+.app-header {
+  width: 100%;
+  color: #222222;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  height: 60px;
+
+  .content {
+    grid-column: 2 / 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      margin: 0;
+    }
+
+    .tools {
+      display: flex;
+    }
+  }
+}

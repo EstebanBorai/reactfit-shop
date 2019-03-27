@@ -1,0 +1,11 @@
+.filter {
+  display: flex;
+
+  input {
+    width: calc(100% - 70px);
+  }
+
+  button {
+    width: 70px;
+  }
+}

@@ -1,0 +1,26 @@
+@function hover-dark($color) {
+  @return mix($color, #303030, 85%);
+}
+
+$primary: #61dafb;
+
+body {
+  * {
+    color: #222222 !important;
+  }
+}
+
+button {
+  border: none;
+  padding: .3rem .5rem;
+  box-sizing: border-box;
+  font-size: .9rem;
+  background: $primary;
+  margin: 0 .4rem;
+  cursor: pointer;
+
+  &:hover, &:active, &.active,
+  &:focus {
+    background: hover-dark($primary);
+  }
+}
