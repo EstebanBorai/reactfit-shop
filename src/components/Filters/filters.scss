@@ -1,0 +1,27 @@
+.filters {
+  grid-column: 1 / 1;
+  background: #ffffff;
+
+  .filter-category {
+    padding: .5rem;
+    margin-top: 1rem;
+    box-sizing: border-box;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: .9rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .collection {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      font-size: .9rem;
+    }
+  }
+}

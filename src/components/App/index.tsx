@@ -1,13 +1,12 @@
 import * as React from 'react';
 import './app.scss';
 import Header from 'components/Header';
+import Main from 'components/Main';
 
 const App = () => (
   <div className="app">
     <Header />
-    <main className="app-main">
-      ReactFit
-    </main>
+    <Main />
   </div>
 );
 

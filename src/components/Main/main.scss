@@ -1,0 +1,13 @@
+.app-main {
+  display: grid;
+  grid-template-columns: 15% auto 15%;
+  padding-top: 1rem;
+  box-sizing: border-box;
+
+  .container {
+    grid-column: 2 / 2;
+    display: grid;
+    grid-template-columns: 210px auto;
+    gap: .5rem;
+  }
+}

@@ -2,8 +2,9 @@
   width: 100%;
   color: #222222;
   display: grid;
-  grid-template-columns: 10% auto 10%;
+  grid-template-columns: 5% auto 5%;
   height: 60px;
+  background: #ffffff;
 
   .content {
     grid-column: 2 / 2;
