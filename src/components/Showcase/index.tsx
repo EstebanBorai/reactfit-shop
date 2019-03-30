@@ -1,5 +1,6 @@
 import * as React from 'react';
-import Modal from 'components/lib/Modal';
+import './showcase.scss';
+import ProductItem from './ProductItem';
 
 const Showcase = () => {
   const [userIdentity, setIdentity] = React.useState(null);
@@ -16,12 +17,20 @@ const Showcase = () => {
   }, []);
 
   return (
-    <React.Fragment>
-      <ul>
-        <li>{userIdentity ? `Welcome back, ${userIdentity.firstName}!` : 'Welcome back!'}</li>
-        <li>Products</li>
-      </ul>
-    </React.Fragment>
+    <ul className="showcase">
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
+      <ProductItem />
+    </ul>
   )
 };
 

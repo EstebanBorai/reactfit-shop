@@ -1,6 +1,10 @@
 .filters {
   grid-column: 1 / 1;
   background: #ffffff;
+  height: min-content;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
 
   .filter-category {
     padding: .5rem;
