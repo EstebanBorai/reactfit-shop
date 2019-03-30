@@ -3,7 +3,7 @@ import './footer.scss';
 
 const Footer = () => (
   <footer className="page-footer">
-    <small>Hapiness and Code is the Answer</small>
+    <small>I dont own anything but the code and you can fork this and edit this and do whatever you want with it.</small>
   </footer>
 );
 

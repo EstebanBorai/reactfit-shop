@@ -1,8 +1,14 @@
 interface IProduct {
-  id: string;
+  id: number;
   name: string;
-  description: string;
+  image: string;
+  category: string;
+  genre: string;
+  colors: Array<string>;
+  sizes: Array<string>;
   price: number;
+  rating: number;
+  brand: string;
 }
 
 export default IProduct;

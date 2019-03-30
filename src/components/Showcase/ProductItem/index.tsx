@@ -1,15 +1,28 @@
 import * as React from 'react';
 import './product-item.scss';
+import IProduct from 'types/IProduct';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-const ProductItem = () => (
+interface IProductItemProps {
+  product: IProduct;
+}
+
+const ProductItem = (props: IProductItemProps) => (
   <li className="product-item">
     <div className="previewer">
-      <img src="https://via.placeholder.com/180x250" alt="product preview" />
+      <img src={props.product.image} alt="product preview" />
     </div>
     <article>
-      <h4>Product Title</h4>
-      <span>Price</span>
-      <button>Add to Cart</button>
+      <h4 title={props.product.name}>
+        {
+          props.product.name.length > 20 ? 
+          `${props.product.name.substr(0, 20)}...` : 
+          props.product.name
+        }
+      </h4>
+      <span>{props.product.price}&nbsp;<sup>$</sup></span>
+      <button><FontAwesomeIcon icon={faShoppingCart} />&nbsp;Add to Cart</button>
     </article>
   </li>
 )

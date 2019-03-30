@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './showcase.scss';
 import ProductItem from './ProductItem';
+import productsJSON from 'misc/products.json';
 
 const Showcase = () => {
   const [userIdentity, setIdentity] = React.useState(null);
@@ -18,18 +19,11 @@ const Showcase = () => {
 
   return (
     <ul className="showcase">
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
-      <ProductItem />
+      {
+        productsJSON && productsJSON.map(product => (
+          <ProductItem product={product} key={product.id} />
+        ))
+      }
     </ul>
   )
 };

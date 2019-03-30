@@ -4,6 +4,7 @@
     "sourceMap": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "module": "commonjs",
     "target": "es5",
     "jsx": "react",
@@ -15,6 +16,9 @@
       ],
       "components/*": [
         "src/components/*",
+      ],
+      "misc/*": [
+        "src/misc/*"
       ],
       "types/*": [
         "src/types/*",

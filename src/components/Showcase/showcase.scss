@@ -2,7 +2,11 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
-  gap: .5rem;
-  display: grid;
-  grid-template-columns: repeat(4, 22%);
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 4;
+  flex-shrink: 2;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: stretch;
 }

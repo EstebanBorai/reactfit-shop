@@ -55,7 +55,8 @@ const config = {
     contentBase: path.join(__dirname, 'client'),
     compress: true,
     port: 8080,
-    historyApiFallback: true
+    historyApiFallback: true,
+    open: true
   },
   plugins: [
     new HotModuleReplacementPlugin(),
@@ -68,6 +69,7 @@ const config = {
     alias: {
       assets: path.resolve(__dirname, 'src/assets'),
       components: path.resolve(__dirname, 'src/components'),
+      misc: path.resolve(__dirname, 'src/misc'),
       types: path.resolve(__dirname, 'src/types')
     }
   } 

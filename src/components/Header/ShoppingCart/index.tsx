@@ -4,7 +4,7 @@ import ItemList from './ItemList';
 import IProduct from 'types/IProduct';
 
 interface IShoppingCartProps {
-  items: Array<IProduct>;
+  items?: Array<IProduct>;
 }
 
 const ShoppingCart = (props: IShoppingCartProps) => {
