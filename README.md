@@ -3,7 +3,7 @@
 
 <p align="center">  
   <img
-    src="https://raw.githubusercontent.com/gitpullsh/ractfit-shop/master/docs/screenshot.png" 
+    src="https://raw.githubusercontent.com/gitpullsh/reactfit-shop/master/docs/screenshot.png" 
     alt="screenshot"
   />
 </p>
