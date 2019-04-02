@@ -67,10 +67,10 @@ const config = {
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
     alias: {
-      assets: path.resolve(__dirname, 'src/assets'),
-      components: path.resolve(__dirname, 'src/components'),
-      misc: path.resolve(__dirname, 'src/misc'),
-      types: path.resolve(__dirname, 'src/types')
+      assets: path.resolve(__dirname, 'client/assets'),
+      components: path.resolve(__dirname, 'client/components'),
+      misc: path.resolve(__dirname, 'client/misc'),
+      types: path.resolve(__dirname, 'client/types')
     }
   } 
 };
