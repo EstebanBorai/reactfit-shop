@@ -6,10 +6,11 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 interface IProductItemProps {
   product: IProduct;
+  onClick: Function;
 }
 
 const ProductItem = (props: IProductItemProps) => (
-  <li className="product-item">
+  <li className="product-item" onClick={() => props.onClick()}>
     <div className="previewer">
       <img 
         src={props.product.image} 

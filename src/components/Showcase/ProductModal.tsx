@@ -1,15 +1,30 @@
 import * as React from 'react';
 import './showcase.scss';
 import Modal from 'components/lib/Modal';
+import IProduct from 'types/IProduct';
 
 interface IProductModal {
+  product: IProduct,
   onClose: Function;
 }
 
 const ProductModal = (props: IProductModal) => (
-  <Modal title="Product Name" onClickOutside={props.onClose}>
-    <main>
-      
+  <Modal title={props.product.name} onClickOutside={props.onClose}>
+    <main className="product-preview">
+      <div className="image-container">
+        <img 
+          height="auto"
+          width="300px"
+          src={props.product.image}
+          alt="product-preview"
+        />
+      </div>
+      <article>
+        <ul>
+          <li>Brand: {props.product.brand}</li>
+          <li>Price: {props.product.price}$</li>
+        </ul>
+      </article>
     </main>
   </Modal>
 )

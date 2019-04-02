@@ -61,7 +61,7 @@ const config = {
   plugins: [
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'public/index.html'
     })
   ],
   resolve: {

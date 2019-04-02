@@ -10,3 +10,11 @@
   align-items: flex-start;
   align-content: stretch;
 }
+
+.product-preview {
+  display: flex;
+
+  .image-contaier {
+    max-width: 50%;
+  }
+}
