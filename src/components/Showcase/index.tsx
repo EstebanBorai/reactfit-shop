@@ -1,10 +1,14 @@
 import * as React from 'react';
 import './showcase.scss';
 import ProductItem from './ProductItem';
-import productsJSON from 'misc/products.json';
 import ProductModal from './ProductModal';
+import IProduct from 'types/IProduct';
 
-const Showcase = () => {
+interface IShowcaseProps {
+  products: Array<IProduct>
+}
+
+const Showcase = (props: IShowcaseProps) => {
   const [isModalOpen, setModal] = React.useState(false);
 
   return (
@@ -12,7 +16,7 @@ const Showcase = () => {
       {isModalOpen ? <ProductModal onClose={() => setModal(false)} /> : null}
       <ul className="showcase">
         {
-          productsJSON && productsJSON.map(product => (
+          props.products && props.products.map(product => (
             <ProductItem product={product} key={product.id} />
           ))
         }

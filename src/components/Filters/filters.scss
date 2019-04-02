@@ -32,12 +32,21 @@
   }
 
   .filter {
-    padding-bottom: .35rem;
+    padding: .3rem;
     box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: .35rem;
 
     span {
       margin-left: .5rem;
       display: inline-block;
+    }
+
+    &:hover {
+      background: #eeeeee;
+      cursor: pointer;
     }
   }
 }
