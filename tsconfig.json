@@ -12,20 +12,21 @@
     "lib": [ "es2015", "dom" ],
     "paths": {
       "assets/*": [
-        "src/assets/*",
+        "client/assets/*",
       ],
       "components/*": [
-        "src/components/*",
+        "client/components/*",
       ],
       "misc/*": [
-        "src/misc/*"
+        "client/misc/*"
       ],
       "types/*": [
-        "src/types/*",
+        "client/types/*",
       ]
     }
   },
   "include": [
-    "./src/**/*"
+    "./client/**/*",
+    "./server/**/*"
   ]
 }
