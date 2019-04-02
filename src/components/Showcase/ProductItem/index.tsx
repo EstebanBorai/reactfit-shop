@@ -11,7 +11,12 @@ interface IProductItemProps {
 const ProductItem = (props: IProductItemProps) => (
   <li className="product-item">
     <div className="previewer">
-      <img src={props.product.image} alt="product preview" />
+      <img 
+        src={props.product.image} 
+        alt="product preview"
+        height="100%"
+        width="auto"
+      />
     </div>
     <article>
       <h4 title={props.product.name}>

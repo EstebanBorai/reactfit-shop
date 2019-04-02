@@ -19,6 +19,8 @@
       font-size: .9rem;
       text-transform: uppercase;
       margin: 0;
+      padding-bottom: .5rem;
+      box-sizing: border-box;
     }
 
     .collection {
@@ -26,6 +28,16 @@
       margin: 0;
       list-style-type: none;
       font-size: .9rem;
+    }
+  }
+
+  .filter {
+    padding-bottom: .35rem;
+    box-sizing: border-box;
+
+    span {
+      margin-left: .5rem;
+      display: inline-block;
     }
   }
 }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './filters.scss';
+import Filter from './Filter';
 import products from 'misc/products.json';
 
 let filters = {
@@ -48,7 +49,7 @@ const Filters = () => {
         <ul className="collection">
           {
             filters.genres.map((genre, index) => (
-              <li key={index}>{genre}</li>
+              <Filter key={index} filter={genre} isSelected />
             ))
           }
         </ul>
@@ -58,7 +59,7 @@ const Filters = () => {
         <ul className="collection">
           {
             filters.sizes.map((size, index) => (
-              <li key={index}>{size}</li>
+              <Filter key={index} filter={size} isSelected />
             ))
           }
         </ul>
@@ -66,8 +67,8 @@ const Filters = () => {
       <article className="filter-category">
         <h3>Price</h3>
         <div>
-          maxPrice: {filters.maxPrice}<br/>
-          minPrice: {filters.minPrice}<br/>
+          maxPrice: {filters.maxPrice}&nbsp;$<br/>
+          minPrice: {filters.minPrice}&nbsp;$<br/>
         </div>
       </article>
     </aside>
