@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HotModuleReplacementPlugin = require('webpack').HotModuleReplacementPlugin;
 
 const config = {
-  entry: './src/index.tsx',
+  entry: './client/index.tsx',
   output: {
     filename: '[name]/index.js',
     path: path.resolve(__dirname, 'dist')
@@ -54,7 +54,7 @@ const config = {
   devServer: {
     contentBase: path.join(__dirname, 'client'),
     compress: true,
-    port: 8080,
+    port: process.env.CLIENT_PORT,
     historyApiFallback: true,
     open: true
   },
