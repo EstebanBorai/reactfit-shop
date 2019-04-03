@@ -15,10 +15,6 @@ app.use(morgan('combined'));
 
 app.use(routes);
 
-app.get("/", (req, res) => {
-  res.send("Hello world!");
-});
-
 app.listen(process.env.SERVER_PORT, () => {
   console.log(`Running ${process.env.PROJECT_NAME} server at http://localhost:${process.env.SERVER_PORT}`);
 });
