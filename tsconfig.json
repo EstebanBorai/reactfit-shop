@@ -17,6 +17,9 @@
       "components/*": [
         "client/components/*",
       ],
+      "hooks/*": [
+        "client/hooks/*",
+      ],
       "misc/*": [
         "client/misc/*"
       ],

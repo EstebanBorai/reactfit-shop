@@ -1,10 +1,9 @@
 import Filters from "components/Filters";
 import Footer from "components/Footer";
 import Showcase from "components/Showcase";
-import productsJSON from "misc/products.json";
+import { useAsyncEffect } from 'hooks/index';
 import * as React from "react";
-import IFilters from "types/IFilters";
-
+import getFilters from './filters';
 import "./main.scss";
 
 const Main = () => {
@@ -16,49 +15,40 @@ const Main = () => {
   });
 
   const [products, setProducts] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
-  React.useEffect(() => {
-    setProducts(productsJSON);
-    const nextFilters: IFilters = {
-      genres: [],
-      sizes: [],
-      maxPrice: 0,
-      minPrice: 0
-    };
+  useAsyncEffect(() => {
+    const products = new Promise((resolve, reject) => {
+      return fetch('http://localhost:7070/api/products')
+        .then(res => res.json())
+        .then(json => {
+          setProducts(json);
+          getFilters(json).then(filters => {
+            setFilter(filters);
+            resolve();
+          });
+         })
+        .catch(err => {
+          reject(err);
+        });
+    });
 
-    products.forEach((product, index) => {
-      if (index === 0) {
-        nextFilters.maxPrice = product.price;
-        nextFilters.minPrice = product.price;
-      } else {
-        if (product.price > filters.maxPrice) {
-          nextFilters.maxPrice = product.price;
-        }
-
-        if (product.price < nextFilters.minPrice) {
-          nextFilters.minPrice = product.price;
-        }
-      }
-
-      if (nextFilters.genres.indexOf(product.genre) === -1) {
-        nextFilters.genres.push(product.genre);
-      }
-
-      product.sizes.forEach((size) => {
-        if (nextFilters.sizes.indexOf(size) === -1) {
-          nextFilters.sizes.push(size);
-        }
-      });
+    return Promise.all([ products ]).then(res => {
+      setLoading(false);
     });
   }, []);
 
   return (
     <div className="main-layout">
       <main className="app-main">
+      {
+        loading ?
+        <h1>Change this to suspense please.</h1> :
         <div className="container">
           <Filters setFilter={setFilter} filters={filters} />
           <Showcase products={products} />
-        </div>
+        </div> 
+      }
       </main>
       <Footer />
     </div>

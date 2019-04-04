@@ -19,7 +19,7 @@ const Filters = (props: IFiltersProps) => {
           {
             props.filters.genres && props.filters.genres.length > 0 ?
             props.filters.genres.map((genre, index) => (
-              <Filter key={index} filter={genre} isSelected={true} />
+              <Filter key={index} filter={genre} isSelected={false} />
             )) : <em>Sorry theres no genres in this search</em>
           }
         </ul>
@@ -30,7 +30,7 @@ const Filters = (props: IFiltersProps) => {
           {
             props.filters.sizes && props.filters.sizes.length > 0 ?
             props.filters.sizes.map((size, index) => (
-              <Filter key={index} filter={size} isSelected={true} />
+              <Filter key={index} filter={size} isSelected={false} />
             )) : <em>Sorry theres no sizes in this search</em>
           }
         </ul>

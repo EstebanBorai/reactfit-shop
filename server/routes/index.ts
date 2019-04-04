@@ -3,6 +3,6 @@ import product from "./product";
 
 const router = Router();
 
-router.use('/products', product);
+router.use('/api/products', product);
 
 export default router;

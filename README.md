@@ -8,7 +8,8 @@
   />
 </p>
 
-### Running Locally
+## Running Locally
+#### Clone the repository
 ```bash
 # clone the repository
 git clone https://github.com/gitpullsh/reactfit-shop.git
@@ -18,7 +19,18 @@ cd reactfit-shop/
 
 # install dependencies
 yarn
+```
 
+#### Client
+```bash
+# step into project root directory (reactfit-shop)
 # run the development server
 yarn start
+```
+
+#### Server
+```bash
+# step into project root directory (reactfit-shop)
+# run the nodejs server
+yarn run server
 ```

@@ -69,6 +69,7 @@ const config = {
     alias: {
       assets: path.resolve(__dirname, 'client/assets'),
       components: path.resolve(__dirname, 'client/components'),
+      hooks: path.resolve(__dirname, 'client/hooks'),
       misc: path.resolve(__dirname, 'client/misc'),
       types: path.resolve(__dirname, 'client/types')
     }
