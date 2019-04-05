@@ -5,6 +5,7 @@ import { useAsyncEffect } from 'hooks/index';
 import * as React from "react";
 import getFilters from './filters';
 import "./main.scss";
+import Spinner from "components/lib/Spinner";
 
 const Main = () => {
   const [filters, setFilter] = React.useState({
@@ -43,7 +44,7 @@ const Main = () => {
       <main className="app-main">
       {
         loading ?
-        <h1>Change this to suspense please.</h1> :
+        <Spinner /> :
         <div className="container">
           <Filters setFilter={setFilter} filters={filters} />
           <Showcase products={products} />

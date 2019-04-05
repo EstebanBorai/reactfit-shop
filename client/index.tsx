@@ -1,6 +1,7 @@
 import App from "components/App";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import './d.ts';
 
 import "./assets/theme.scss";
 import "./index.scss";
