@@ -1,9 +1,9 @@
-import * as React from "react";
-import IProduct from "types/IProduct";
+import * as React from 'react';
+import IProduct from 'types/IProduct';
 
-import Filter from "./Filter";
-import "./header.scss";
-import ShoppingCart from "./ShoppingCart";
+import Filter from './Filter';
+import './header.scss';
+import ShoppingCart from './ShoppingCart';
 
 const Header = () => (
   <header className="app-header">

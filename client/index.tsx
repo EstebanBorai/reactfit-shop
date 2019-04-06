@@ -1,12 +1,12 @@
-import App from "components/App";
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import App from 'components/App';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import './d.ts';
 
-import "./assets/theme.scss";
-import "./index.scss";
+import './assets/theme.scss';
+import './index.scss';
 
 ReactDOM.render(
   <App />,
-  document.getElementById("app")
+  document.getElementById('app')
 );

@@ -1,41 +1,27 @@
-import Filters from "components/Filters";
-import Footer from "components/Footer";
-import Showcase from "components/Showcase";
+import Filters from 'components/Filters';
+import Footer from 'components/Footer';
+import Spinner from 'components/lib/Spinner';
+import Showcase from 'components/Showcase';
 import { useAsyncEffect } from 'hooks/index';
-import * as React from "react";
-import getFilters from './filters';
-import "./main.scss";
-import Spinner from "components/lib/Spinner";
+import * as React from 'react';
+import './main.scss';
 
 const Main = () => {
-  const [filters, setFilter] = React.useState({
-    genres: [],
-    sizes: [],
-    maxPrice: 0,
-    minPrice: 0
-  });
-
   const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
 
   useAsyncEffect(() => {
-    const products = new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       return fetch('http://localhost:7070/api/products')
-        .then(res => res.json())
-        .then(json => {
+        .then((res) => res.json())
+        .then((json) => {
           setProducts(json);
-          getFilters(json).then(filters => {
-            setFilter(filters);
-            resolve();
-          });
+          setLoading(false);
+          resolve();
          })
-        .catch(err => {
+        .catch((err) => {
           reject(err);
         });
-    });
-
-    return Promise.all([ products ]).then(res => {
-      setLoading(false);
     });
   }, []);
 
@@ -46,9 +32,9 @@ const Main = () => {
         loading ?
         <Spinner /> :
         <div className="container">
-          <Filters setFilter={setFilter} filters={filters} />
+          <Filters />
           <Showcase products={products} />
-        </div> 
+        </div>
       }
       </main>
       <Footer />

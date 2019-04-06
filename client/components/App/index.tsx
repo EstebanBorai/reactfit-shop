@@ -1,8 +1,8 @@
-import Header from "components/Header";
-import Main from "components/Main";
-import * as React from "react";
+import Header from 'components/Header';
+import Main from 'components/Main';
+import * as React from 'react';
 
-import "./app.scss";
+import './app.scss';
 
 const App = () => (
   <div className="app">

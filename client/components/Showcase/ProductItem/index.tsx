@@ -1,9 +1,9 @@
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as React from "react";
-import IProduct from "types/IProduct";
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as React from 'react';
+import IProduct from 'types/IProduct';
 
-import "./product-item.scss";
+import './product-item.scss';
 
 interface IProductItemProps {
   product: IProduct;

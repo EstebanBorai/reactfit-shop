@@ -1,11 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 
-import "./modal.scss";
+import './modal.scss';
 
 interface IModalProps {
   title: string;
   children: any;
-  onClickOutside: Function;
+  onClose: Function;
 }
 
 const Modal = (props: IModalProps) => {
@@ -13,17 +13,25 @@ const Modal = (props: IModalProps) => {
 
   const setWrapperRef = (node) => containerRef = node;
 
-  const handleClickOutside = (event) => {
-    if (containerRef && !containerRef.contains(event.target)) {
-      props.onClickOutside();
+  const handleClose = (event) => {
+    if (event.type === 'mousedown') {
+      if (containerRef && !containerRef.contains(event.target)) {
+        props.onClose();
+      }
+    }
+
+    if (event.type === 'keydown' && event.keyCode === 27) {
+      props.onClose();
     }
   };
 
   React.useEffect(() => {
-    document.addEventListener("mousedown", (event) => handleClickOutside(event));
+    document.addEventListener('mousedown', (event) => handleClose(event));
+    document.addEventListener('keydown', (event) => handleClose(event));
 
-    return function() {
-      document.removeEventListener("mousedown", (event) => handleClickOutside(event));
+    return () => {
+      document.removeEventListener('mousedown', (event) => handleClose(event));
+      document.removeEventListener('keydown', (event) => handleClose(event));
     };
   }, []);
 

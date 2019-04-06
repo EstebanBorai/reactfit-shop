@@ -1,0 +1,33 @@
+.filter-manager {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  z-index: 500;
+  display: flex;
+  overflow: hidden;
+  padding: .5rem;
+
+  .selected-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: .5rem;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 35px;
+    height: 35px;
+    margin-right: .5rem;
+    cursor: pointer;
+
+    &:hover {
+      transition: .5s;
+      background: #323232;
+      border-color: #323232;
+    }
+  }
+}

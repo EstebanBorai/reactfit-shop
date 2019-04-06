@@ -1,46 +1,28 @@
-import products from "misc/products.json";
-import * as React from "react";
-import IFilters from "types/IFilters";
+import * as React from 'react';
 
-import Filter from "./Filter";
-import "./filters.scss";
+import Filter from './Filter';
+import './filters.scss';
 
-interface IFiltersProps {
-  filters: IFilters;
-  setFilter: Function;
-}
-
-const Filters = (props: IFiltersProps) => {
+const Filters = () => {
   return (
     <aside className="filters">
       <article className="filter-category">
         <h3>Genre</h3>
         <ul className="collection">
-          {
-            props.filters.genres && props.filters.genres.length > 0 ?
-            props.filters.genres.map((genre, index) => (
-              <Filter key={index} filter={genre} isSelected={false} />
-            )) : <em>Sorry theres no genres in this search</em>
-          }
+          <Filter filter="F" isSelected={false} />
+          <Filter filter="M" isSelected={false} />
         </ul>
       </article>
       <article className="filter-category">
         <h3>Sizes</h3>
         <ul className="collection">
-          {
-            props.filters.sizes && props.filters.sizes.length > 0 ?
-            props.filters.sizes.map((size, index) => (
-              <Filter key={index} filter={size} isSelected={false} />
-            )) : <em>Sorry theres no sizes in this search</em>
-          }
+          <Filter filter="XL" isSelected={false} />
+          <Filter filter="L" isSelected={false} />
+          <Filter filter="M" isSelected={false} />
+          <Filter filter="S" isSelected={false} />
+          <Filter filter="12" isSelected={false} />
+          <Filter filter="XS" isSelected={false} />
         </ul>
-      </article>
-      <article className="filter-category">
-        <h3>Price</h3>
-        <div>
-          maxPrice: {props.filters.maxPrice}&nbsp;$<br/>
-          minPrice: {props.filters.minPrice}&nbsp;$<br/>
-        </div>
       </article>
     </aside>
   );

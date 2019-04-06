@@ -8,9 +8,11 @@
   "rules": {
     "trailing-comma": false,
     "jsx-wrap-multiline": false,
-    "quotemark": "single",
+    "quotemark": [true, "single", "jsx-double"],
     "no-implicit-dependencies": false,
-    "no-submodule-imports": false
+    "jsx-no-multiline-js": false,
+    "no-submodule-imports": false,
+    "ban-types": false
   },
   "rulesDirectory": []
 }

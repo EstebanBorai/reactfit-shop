@@ -1,6 +1,6 @@
 import * as React from 'react';
-import './spinner.scss';
 import reactLogo from '../../../assets/react_logo.png';
+import './spinner.scss';
 
 const Spinner = () => (
   <div className="spinner-container">

@@ -1,8 +1,8 @@
-import * as React from "react";
-import IProduct from "types/IProduct";
+import * as React from 'react';
+import IProduct from 'types/IProduct';
 
-import ItemList from "./ItemList";
-import "./shopping-cart.scss";
+import ItemList from './ItemList';
+import './shopping-cart.scss';
 
 interface IShoppingCartProps {
   items?: IProduct[];

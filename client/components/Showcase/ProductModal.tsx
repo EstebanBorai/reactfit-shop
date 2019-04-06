@@ -1,8 +1,8 @@
-import Modal from "components/lib/Modal";
-import * as React from "react";
-import IProduct from "types/IProduct";
+import Modal from 'components/lib/Modal';
+import * as React from 'react';
+import IProduct from 'types/IProduct';
 
-import "./showcase.scss";
+import './showcase.scss';
 
 interface IProductModal {
   product: IProduct;
@@ -10,12 +10,12 @@ interface IProductModal {
 }
 
 const ProductModal = (props: IProductModal) => (
-  <Modal title={props.product.name} onClickOutside={props.onClose}>
+  <Modal title={props.product.name} onClose={props.onClose}>
     <main className="product-preview">
       <div className="image-container">
         <img
-          height="auto"
-          width="300px"
+          height="320px"
+          width="auto"
           src={props.product.image}
           alt="product-preview"
         />
