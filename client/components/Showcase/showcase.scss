@@ -1,19 +1,4 @@
 .products {
-  .selected-filters {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    position: -webkit-sticky;
-    position: sticky;
-    top: -1px;
-    z-index: 500;
-    background: red;
-    display: flex;
-    padding: .5rem;
-    box-sizing: border-box;
-    border-radius: 1rem;
-  }
-
   .showcase {
     padding: 0;
     margin: 0;

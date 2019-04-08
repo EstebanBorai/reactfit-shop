@@ -1,5 +1,5 @@
+import Error from 'components/lib/Error';
 import Filters from 'components/Filters';
-import Footer from 'components/Footer';
 import Spinner from 'components/lib/Spinner';
 import Showcase from 'components/Showcase';
 import { useAsyncEffect } from 'hooks/index';
@@ -9,6 +9,7 @@ import './main.scss';
 const Main = () => {
   const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
 
   useAsyncEffect(() => {
     return new Promise((resolve, reject) => {
@@ -20,6 +21,8 @@ const Main = () => {
           resolve();
          })
         .catch((err) => {
+          setError(err);
+          setLoading(false);
           reject(err);
         });
     });
@@ -29,6 +32,7 @@ const Main = () => {
     <div className="main-layout">
       <main className="app-main">
       {
+        error ? <Error message="We had trouble fetching products!" /> :
         loading ?
         <Spinner /> :
         <div className="container">
@@ -37,7 +41,6 @@ const Main = () => {
         </div>
       }
       </main>
-      <Footer />
     </div>
   );
 };
