@@ -11,17 +11,26 @@
     "baseUrl": ".",
     "lib": [ "es2015", "dom" ],
     "paths": {
+      "actions/*": [
+        "client/actions/*",
+      ],
       "assets/*": [
         "client/assets/*",
       ],
       "components/*": [
         "client/components/*",
       ],
+      "containers/*": [
+        "client/containers/*",
+      ],
       "hooks/*": [
         "client/hooks/*",
       ],
       "misc/*": [
         "client/misc/*"
+      ],
+      "reducers/*": [
+        "client/reducers/*",
       ],
       "types/*": [
         "client/types/*",
