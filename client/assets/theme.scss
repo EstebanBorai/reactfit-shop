@@ -1,3 +1,7 @@
+$dark: #323232;
+$light: #ffffff;
+$danger: #aa2323;
+
 @function hover-dark($color) {
   @return mix($color, #303030, 85%);
 }

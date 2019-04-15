@@ -1,33 +1,75 @@
-.filter-manager {
+@import '~assets/theme.scss';
+
+%clear-native-list {
+  display: flex;
   margin: 0;
   padding: 0;
+  list-style-type: none;
+  font-size: .9rem;
+}
+
+%filter-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  box-sizing: border-box;
+  width: 35px;
+  height: 35px;
+}
+
+%warning-status {
+  transition: .5s;;
+  color: $light;
+  border: 1px solid $light;
+  background: $danger;
+  cursor: pointer;
+}
+
+.filter-manager {
+  @extend %clear-native-list;
   list-style-type: none;
   position: -webkit-sticky;
   position: sticky;
   top: -1px;
   z-index: 500;
-  display: flex;
   overflow: hidden;
   padding: .5rem;
 
   .selected-filter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    padding: .5rem;
-    box-sizing: border-box;
+    @extend %filter-item;
+    border: 1px solid transparent;
+    color: $light;
     border-radius: 100px;
-    width: 35px;
-    height: 35px;
     margin-right: .5rem;
-    cursor: pointer;
 
     &:hover {
-      transition: .5s;
-      background: #323232;
-      border-color: #323232;
+      @extend %warning-status;
     }
+
+    &:first-child {
+      margin-left: .5rem;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .filter-category-title {
+    @extend %filter-item;
+    margin: 0 .5rem;
+    text-transform: uppercase;
+    color: $light;
+    padding: 0 !important;
+  }
+
+  .filter-category {
+    @extend %clear-native-list;
+    border: 1px solid $dark;
+    border-radius: 100px;
+    margin-right: .5rem;
+    background: $dark;
+    padding-left: .5rem;
   }
 }
