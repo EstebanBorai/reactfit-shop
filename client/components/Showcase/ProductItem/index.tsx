@@ -10,8 +10,13 @@ interface IProductItemProps {
   onClick: Function;
 }
 
-const ProductItem = (props: IProductItemProps) => (
-  <li className="product-item" onClick={() => props.onClick()}>
+const ProductItem = (props: IProductItemProps) => {
+  const handleClick = () => {
+    props.onClick(props.product);
+  };
+
+  return (
+  <li className="product-item" onClick={handleClick}>
     <div className="previewer">
       <img
         src={props.product.image}
@@ -32,6 +37,7 @@ const ProductItem = (props: IProductItemProps) => (
       <button><FontAwesomeIcon icon={faShoppingCart} />&nbsp;Add to Cart</button>
     </article>
   </li>
-);
+  );
+};
 
 export default ProductItem;

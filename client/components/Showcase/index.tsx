@@ -11,12 +11,17 @@ import { IShowcaseDispatchProps, IShowcaseStateProps } from 'containers/Showcase
 type Props = IShowcaseDispatchProps & IShowcaseStateProps;
 
 const Showcase = (props: Props) => {
-  const [isModalOpen, setModal] = React.useState(false);
+  const [isModalOpen, setModal] = React.useState(true);
   const [selectedProduct, setSelectedProduct] = React.useState(null);
 
   const handleProductClick = (product) => {
     setModal(true);
     setSelectedProduct(product);
+  };
+
+  const handleCloseModal = () => {
+    setModal(false);
+    setSelectedProduct(null);
   };
 
   React.useEffect(() => {
@@ -25,7 +30,7 @@ const Showcase = (props: Props) => {
 
   return (
     <React.Fragment>
-      {isModalOpen ? <ProductModal onClose={() => setModal(false)} product={selectedProduct} /> : null}
+      <ProductModal isOpen={isModalOpen} product={selectedProduct} onClose={handleCloseModal} />
       <section className="products">
         <FilterManager />
         <ul className="showcase">
@@ -34,7 +39,7 @@ const Showcase = (props: Props) => {
               <ProductItem
                 key={product.id}
                 product={product}
-                onClick={() => handleProductClick(product)}
+                onClick={handleProductClick}
               />
             )).toArray()
           }

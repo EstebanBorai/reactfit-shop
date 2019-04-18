@@ -4736,6 +4736,11 @@ react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.5.tgz#c54ac229dd66b5afe0de5acbe47647c3da692ff8"
   integrity sha512-sudt2uq5P/2TznPV4Wtdi+Lnq3yaYW8LfvPKLM9BKD8jJNBkxMVyB0C9/GmVhLw7Jbdmndk/73n7XQGeN9A3QQ==
 
+react-modable@^2.0.0-1:
+  version "2.0.0-1"
+  resolved "https://registry.yarnpkg.com/react-modable/-/react-modable-2.0.0-1.tgz#6e6f6769241916753766ede25ac719157156bc92"
+  integrity sha512-0fOU+oZP0bkHwqEV5KFelhn43rqjhHuPLP6cd4dAqJS6viFHjE295wDqZJfJKKAs9Y2cNzegZa3Ps76hmthlBQ==
+
 react-redux@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.0.1.tgz#321285e6c85c3586d11cc066ab33dc580da599fb"
