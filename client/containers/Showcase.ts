@@ -1,9 +1,9 @@
+import { IProduct } from '@types';
 import { getProducts } from 'actions/products';
 import Showcase from 'components/Showcase';
 import { Map } from 'immutable';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import IProduct from 'types/IProduct';
 
 export interface IShowcaseStateProps {
   products: Map<string, IProduct>;

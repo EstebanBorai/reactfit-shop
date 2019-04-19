@@ -1,5 +1,4 @@
 import * as React from 'react';
-import IProduct from 'types/IProduct';
 
 import FilterManager from './FilterManager';
 import ProductItem from './ProductItem';

@@ -16,6 +16,6 @@ const Error = (props: IErrorProps) => (
 
 Error.defaultProps = {
   message: null
-}
+};
 
 export default Error;

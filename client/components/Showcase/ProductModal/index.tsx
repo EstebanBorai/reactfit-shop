@@ -1,9 +1,10 @@
+import { IProduct } from '@types';
+import AddToCart from 'components/AddToCart';
 import ColorSelector from 'components/ColorSelector';
 import SizeSelector from 'components/SizeSelector';
 import * as React from 'react';
 import Modal from 'react-modable';
-import IProduct from 'types/IProduct';
-import './showcase.scss';
+import './product-modal.scss';
 
 interface IProductModal {
   isOpen: boolean;
@@ -25,6 +26,13 @@ const ProductModal = (props: IProductModal) => {
           <div className="details-container">
             <h3>{props.product.name}</h3>
             <span className="brand-stripe">by&nbsp;<strong>{props.product.brand}</strong></span>
+            <span className="product-rating">Rating: {props.product.rating}/5</span>
+            <p className="product-description">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Rerum officia est veniam consequuntur tempore optio, animi
+              hic doloribus repellendus inventore explicabo? Iste similique sint
+              sed dolores veritatis distinctio est voluptatibus.
+            </p>
             <ol className="product-properties">
               <li className="property">
                 <span>Size</span>
@@ -35,6 +43,9 @@ const ProductModal = (props: IProductModal) => {
                 <ColorSelector colors={props.product.colors} />
               </li>
             </ol>
+            <footer>
+              <AddToCart onClick={() => console.log(props.product)} />
+            </footer>
           </div>
         </main>
       </Modal>

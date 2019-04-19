@@ -1,0 +1,24 @@
+.add-to-cart {
+  background: none;
+  border: none;
+  background: transparent;
+  border: 1px solid #61dafb;
+  color: #61dafb;
+  margin: .4rem auto;
+  margin-bottom: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+
+   * {
+    color: #61dafb;
+   }
+
+  &:hover {
+    color: #ffffff;
+    background: #61dafb;
+    
+    * {
+      color: #ffffff;
+    }
+  }
+}

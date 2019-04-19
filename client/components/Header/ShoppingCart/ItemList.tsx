@@ -1,5 +1,5 @@
+import { IProduct } from '@types';
 import * as React from 'react';
-import IProduct from 'types/IProduct';
 
 import './shopping-cart.scss';
 
