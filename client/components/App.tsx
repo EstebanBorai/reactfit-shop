@@ -1,12 +1,12 @@
 import Header from 'components/Header';
-import Main from 'components/Main';
+import Home from 'pages/Home';
 import * as React from 'react';
 
 const App = () => (
-  <div>
+  <React.Fragment>
     <Header />
-    <Main />
-  </div>
+    <Home />
+  </React.Fragment>
 );
 
 export default App;

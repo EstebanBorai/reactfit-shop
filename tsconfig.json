@@ -32,6 +32,9 @@
       "misc/*": [
         "client/misc/*"
       ],
+      "pages/*": [
+        "client/pages/*"
+      ],
       "reducers/*": [
         "client/reducers/*",
       ],

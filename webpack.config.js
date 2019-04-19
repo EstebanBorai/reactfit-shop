@@ -83,6 +83,7 @@ const config = {
       containers: path.resolve(__dirname, 'client/containers'),
       hooks: path.resolve(__dirname, 'client/hooks'),
       misc: path.resolve(__dirname, 'client/misc'),
+      pages: path.resolve(__dirname, 'client/pages'),
       reducers: path.resolve(__dirname, 'client/reducers'),
       types: path.resolve(__dirname, 'client/types')
     }

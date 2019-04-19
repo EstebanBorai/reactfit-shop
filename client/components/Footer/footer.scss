@@ -1,0 +1,13 @@
+@import '~assets/theme.scss';
+
+.site-footer {
+  background: $secondary;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  small {
+    color: #ffe760;
+  }
+}
