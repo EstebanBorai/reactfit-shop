@@ -1,5 +1,5 @@
 import { IProduct } from '@types';
-import AddToCart from 'components/AddToCart';
+import AddToCart from 'containers/AddToCart';
 import * as React from 'react';
 
 import './product-item.scss';
@@ -33,7 +33,7 @@ const ProductItem = (props: IProductItemProps) => {
         }
       </h4>
       <span>{props.product.price}&nbsp;<sup>$</sup></span>
-      <AddToCart onClick={() => console.log(props.product)} />
+      <AddToCart item={props.product} />
     </article>
   </li>
   );

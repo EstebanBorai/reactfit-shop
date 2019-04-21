@@ -6,8 +6,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 
   small {
     color: #ffe760;
+
+    * {
+      color: inherit;
+    }
   }
 }

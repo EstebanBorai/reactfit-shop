@@ -1,5 +1,7 @@
+import { IProduct } from '@types';
+
 interface IAddToCart {
-  onClick: Function;
+  item: IProduct;
 }
 
 export default IAddToCart;

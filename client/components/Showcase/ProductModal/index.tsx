@@ -1,7 +1,7 @@
 import { IProduct } from '@types';
-import AddToCart from 'components/AddToCart';
 import ColorSelector from 'components/ColorSelector';
 import SizeSelector from 'components/SizeSelector';
+import AddToCart from 'containers/AddToCart';
 import * as React from 'react';
 import Modal from 'react-modable';
 import './product-modal.scss';
@@ -44,7 +44,7 @@ const ProductModal = (props: IProductModal) => {
               </li>
             </ol>
             <footer>
-              <AddToCart onClick={() => console.log(props.product)} />
+              <AddToCart item={props.product} />
             </footer>
           </div>
         </main>
