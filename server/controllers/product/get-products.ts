@@ -1,7 +1,9 @@
+/* tslint:disable */
+
 function getProducts(req, res) {
   res.status(200).send([
     {
-      id: 1,
+      id: '17717b86-9d13-488c-a0c1-47fae91a1878',
       name: 'Tech Short Sleeve T-Shirt',
       image: 'https://images-na.ssl-images-amazon.com/images/I/811o2css%2BmL._SL1500_.jpg',
       category: 'T-Shirt',
@@ -13,7 +15,7 @@ function getProducts(req, res) {
       brand: 'Under Armour'
     },
     {
-      id: 2,
+      id: '30fd26a0-a06f-4a81-a36c-0eda20acd732',
       name: 'Yoga Pants',
       image: 'https://images-na.ssl-images-amazon.com/images/I/61wQ2GLoCoL._UL1500_.jpg',
       category: 'Pants',
@@ -25,7 +27,7 @@ function getProducts(req, res) {
       brand: 'IUGA'
     },
     {
-      id: 3,
+      id: '30fd26a0-a06f-4a81-a36c-0eda20acd734',
       name: 'Raid 10" Shorts',
       image: 'https://images-na.ssl-images-amazon.com/images/I/51xFLtI1bpL._SL1000_.jpg',
       category: 'Shorts',
@@ -37,7 +39,7 @@ function getProducts(req, res) {
       brand: 'Under Armour'
     },
     {
-      id: 4,
+      id: '30fd26a0-a06f-4a81-a36c-0eda20acd733',
       name: 'Sleeveless Scoop Neck',
       image: 'https://images-na.ssl-images-amazon.com/images/I/61tIkbBRMJL._UL1500_.jpg',
       category: 'Tank Top',
@@ -49,7 +51,7 @@ function getProducts(req, res) {
       brand: 'Cyanstyle'
     },
     {
-      id: 5,
+      id: '30fd24a0-a06f-4a81-a36c-0eda20acd732',
       name: 'Originals 3-Stripes Leggings',
       image: 'https://images-na.ssl-images-amazon.com/images/I/71jC5YoYgDL._UL1500_.jpg',
       category: 'Pants',
@@ -61,7 +63,7 @@ function getProducts(req, res) {
       brand: 'Adidas'
     },
     {
-      id: 6,
+      id: '30fd26a0-a06e-4a81-a36c-0eda20acd732',
       name: 'Tech Short Sleeve T-Shirt',
       image: 'https://images-na.ssl-images-amazon.com/images/I/811o2css%2BmL._SL1500_.jpg',
       category: 'T-Shirt',
@@ -73,7 +75,7 @@ function getProducts(req, res) {
       brand: 'Under Armour'
     },
     {
-      id: 7,
+      id: '30fd26a0-a06f-4a81-ae6c-0eda20acd732',
       name: 'Yoga Pants',
       image: 'https://images-na.ssl-images-amazon.com/images/I/61wQ2GLoCoL._UL1500_.jpg',
       category: 'Pants',
@@ -85,7 +87,7 @@ function getProducts(req, res) {
       brand: 'IUGA'
     },
     {
-      id: 8,
+      id: '30fd26a0-a06f-4a81-a436c-0eda2acd732',
       name: 'Raid 10" Shorts',
       image: 'https://images-na.ssl-images-amazon.com/images/I/51xFLtI1bpL._SL1000_.jpg',
       category: 'Shorts',
@@ -97,7 +99,7 @@ function getProducts(req, res) {
       brand: 'Under Armour'
     },
     {
-      id: 9,
+      id: '30fd26a0-a06f-4a81-a36c-0eda20acd432',
       name: 'Sleeveless Scoop Neck',
       image: 'https://images-na.ssl-images-amazon.com/images/I/61tIkbBRMJL._UL1500_.jpg',
       category: 'Tank Top',
@@ -109,7 +111,7 @@ function getProducts(req, res) {
       brand: 'Cyanstyle'
     },
     {
-      id: 10,
+      id: '30fd26a0-a06f-4a81-a36c-0eda20ac4732',
       name: 'Originals 3-Stripes Leggings',
       image: 'https://images-na.ssl-images-amazon.com/images/I/71jC5YoYgDL._UL1500_.jpg',
       category: 'Pants',
