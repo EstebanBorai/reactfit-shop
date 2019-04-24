@@ -8,7 +8,8 @@ import './add-to-cart.scss';
 type Props = IAddToCart & IAddToCartDispatchProps;
 
 const AddToCart = (props: Props) => {
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.stopPropagation();
     props.onAddToCart(props.item);
   };
 

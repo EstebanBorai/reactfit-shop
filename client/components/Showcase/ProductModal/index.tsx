@@ -1,9 +1,9 @@
-import { IProduct } from '@types';
 import ColorSelector from 'components/ColorSelector';
 import SizeSelector from 'components/SizeSelector';
 import AddToCart from 'containers/AddToCart';
 import * as React from 'react';
 import Modal from 'react-modable';
+import { IProduct } from 'types/index';
 import './product-modal.scss';
 
 interface IProductModal {

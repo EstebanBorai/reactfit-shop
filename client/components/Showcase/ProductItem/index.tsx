@@ -1,6 +1,6 @@
-import { IProduct } from '@types';
 import AddToCart from 'containers/AddToCart';
 import * as React from 'react';
+import { IProduct } from 'types/index';
 
 import './product-item.scss';
 

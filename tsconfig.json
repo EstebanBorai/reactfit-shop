@@ -11,9 +11,6 @@
     "baseUrl": ".",
     "lib": [ "es2015", "dom" ],
     "paths": {
-      "@types/*": [
-        "client/@types/*"
-      ],
       "actions/*": [
         "client/actions/*",
       ],

@@ -1,25 +1,27 @@
-import { Map as ImmutableMap } from 'immutable';
 import * as React from 'react';
+import ProductCartItem from './ProductCartItem';
 
-import { IShoppingCartItem } from '@types';
+import { IShoppingCart } from 'types';
 import './shopping-cart.scss';
 
-interface IItemListProps {
-  items: ImmutableMap<string, IShoppingCartItem>;
-}
-
-const ItemList = (props: IItemListProps) => {
+const ItemList = (props: IShoppingCart) => {
   return (
     <div className="cart-items">
       <ol className="item-list">
         {
           props.items && props.items.size > 0 ?
           props.items.map((item) => (
-            <li key={item.productId}>{JSON.stringify(item)}</li>
+            <ProductCartItem
+              key={item.productId}
+              name="TestName"
+              price={10}
+              productId={item.productId}
+            />
           )).valueSeq().toArray() :
           <li>Your cart is empty</li>
         }
       </ol>
+      <span id="shopping-cart-total">Total: {Number(props.total).toFixed(2)}</span>
     </div>
   );
 };

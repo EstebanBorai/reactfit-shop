@@ -76,7 +76,6 @@ const config = {
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
     alias: {
-      '@types': path.resolve(__dirname, 'client/@types'),
       actions: path.resolve(__dirname, 'client/actions'),
       assets: path.resolve(__dirname, 'client/assets'),
       components: path.resolve(__dirname, 'client/components'),
