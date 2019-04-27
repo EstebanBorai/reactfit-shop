@@ -1,7 +1,9 @@
+import { faSadTear } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as React from 'react';
 import ProductCartItem from './ProductCartItem';
 
-import { IShoppingCart } from 'types';
+import { IShoppingCart } from 'types/index';
 import './shopping-cart.scss';
 
 const ItemList = (props: IShoppingCart) => {
@@ -18,10 +20,19 @@ const ItemList = (props: IShoppingCart) => {
               productId={item.productId}
             />
           )).valueSeq().toArray() :
-          <li>Your cart is empty</li>
+          <li id="cart-empty-message">
+            <span>
+              <FontAwesomeIcon icon={faSadTear} />
+            </span>
+            <strong>Umm.. This looks empty! Maybe you can add something to see what happens!</strong>
+          </li>
         }
       </ol>
-      <span id="shopping-cart-total">Total: {Number(props.total).toFixed(2)}</span>
+      {
+        props.items && props.items.size === 0 ?
+        null :
+        <span id="shopping-cart-total">Total: {Number(props.total).toFixed(2)}</span>
+      }
     </div>
   );
 };

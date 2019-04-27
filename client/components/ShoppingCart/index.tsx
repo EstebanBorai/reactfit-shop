@@ -1,7 +1,7 @@
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IShoppingCart } from 'types';
 import * as React from 'react';
+import { IShoppingCart } from 'types/index';
 
 import ItemList from './ItemList';
 import './shopping-cart.scss';
@@ -10,9 +10,7 @@ const ShoppingCart = (props: IShoppingCart) => {
   const [isOpen, setOpen] = React.useState(false);
 
   const handleClick = () => {
-    if (props.items.size > 0) {
-      setOpen(!isOpen);
-    }
+    setOpen(!isOpen);
   };
 
   return (
