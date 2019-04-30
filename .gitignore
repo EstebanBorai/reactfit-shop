@@ -39,3 +39,4 @@ Thumbs.db
 # JavaScript #
 ##############
 node_modules
+yarn-error.log
