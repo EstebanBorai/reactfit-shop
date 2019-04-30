@@ -1,5 +1,5 @@
 # reactfit-shop
-> 🛍 Sample React.js Fitness Shop 
+> 🛍 A sample ecommerce made with React.js & Redux
 
 <p align="center">  
   <img
