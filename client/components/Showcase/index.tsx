@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import FilterManager from './FilterManager';
+import FilterManager from 'containers/Showcase/FilterManager';
 import ProductItem from './ProductItem';
 import ProductModal from './ProductModal';
 import './showcase.scss';

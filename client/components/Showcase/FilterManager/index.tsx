@@ -1,4 +1,6 @@
 import Search from 'components/Search';
+import FilterCategory from 'containers/Showcase/FilterManager/FilterCategory';
+import FilterItem from 'containers/Showcase/FilterManager/FilterItem';
 import * as React from 'react';
 import './filter-manager.scss';
 
@@ -8,22 +10,20 @@ const FilterManager = () => (
       <Search />
     </li>
     <li>
-      <ol className="filter-category">
-        <li className="filter-category-title">Genres</li>
-        <li className="selected-filter">F</li>
-        <li className="selected-filter">M</li>
-      </ol>
+      <FilterCategory title="Genres" filterKey="genres">
+        <FilterItem title="F" filterValue="F" />
+        <FilterItem title="M" filterValue="M" />
+      </FilterCategory>
     </li>
     <li>
-      <ol className="filter-category">
-        <li className="filter-category-title">Sizes</li>
-        <li className="selected-filter">XL</li>
-        <li className="selected-filter">L</li>
-        <li className="selected-filter">M</li>
-        <li className="selected-filter">S</li>
-        <li className="selected-filter">12</li>
-        <li className="selected-filter">XS</li>
-      </ol>
+      <FilterCategory title="Sizes" filterKey="sizes">
+        <FilterItem title="XL" filterValue="XL" />
+        <FilterItem title="L" filterValue="L" />
+        <FilterItem title="M" filterValue="M" />
+        <FilterItem title="S" filterValue="S" />
+        <FilterItem title="12" filterValue="12" />
+        <FilterItem title="XS" filterValue="XS" />
+      </FilterCategory>
     </li>
   </ol>
 );

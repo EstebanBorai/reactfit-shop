@@ -84,6 +84,7 @@ const config = {
       misc: path.resolve(__dirname, 'client/misc'),
       pages: path.resolve(__dirname, 'client/pages'),
       reducers: path.resolve(__dirname, 'client/reducers'),
+      selectors: path.resolve(__dirname, 'client/selectors'),
       types: path.resolve(__dirname, 'client/types')
     }
   }

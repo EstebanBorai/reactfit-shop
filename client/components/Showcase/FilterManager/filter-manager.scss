@@ -43,7 +43,7 @@
     border-radius: 100px;
     margin-right: .5rem;
 
-    &:hover {
+    &:hover, &.active {
       @extend %warning-status;
     }
 

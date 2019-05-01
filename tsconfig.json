@@ -12,19 +12,19 @@
     "lib": [ "es2015", "dom" ],
     "paths": {
       "actions/*": [
-        "client/actions/*",
+        "client/actions/*"
       ],
       "assets/*": [
-        "client/assets/*",
+        "client/assets/*"
       ],
       "components/*": [
-        "client/components/*",
+        "client/components/*"
       ],
       "containers/*": [
-        "client/containers/*",
+        "client/containers/*"
       ],
       "hooks/*": [
-        "client/hooks/*",
+        "client/hooks/*"
       ],
       "misc/*": [
         "client/misc/*"
@@ -33,10 +33,13 @@
         "client/pages/*"
       ],
       "reducers/*": [
-        "client/reducers/*",
+        "client/reducers/*"
+      ],
+      "selectors/*": [
+        "client/selectors/*"
       ],
       "types/*": [
-        "client/types/*",
+        "client/types/*"
       ]
     }
   },

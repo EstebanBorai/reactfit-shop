@@ -60,6 +60,7 @@
     "react-modable": "^2.0.0-1",
     "react-redux": "^7.0.1",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
   }
 }
