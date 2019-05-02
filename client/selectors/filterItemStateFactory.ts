@@ -16,8 +16,6 @@ const filterItemStateFactory = (originalState, originalOwnProps) => {
 
   return (state, ownProps) => {
     return {
-      ...originalState,
-      ...ownProps,
       isActive: isFilterActiveSelector(state)
     };
   };

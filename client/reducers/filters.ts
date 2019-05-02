@@ -1,11 +1,11 @@
-import { ADD_FILTER } from 'actions/filters';
+import { ADD_FILTER, REMOVE_FILTER } from 'actions/filters';
 import { List as ImmutableList } from 'immutable';
 import { IFilter } from 'types/index';
 
 const initialValues = {
   genres: ImmutableList<string>(),
-  maxPrice: 0,
-  minPrice: 0,
+  maxPrice: null,
+  minPrice: null,
   sizes: ImmutableList<string>()
 };
 
@@ -23,6 +23,23 @@ const reducer = (filters: IFilter = initialValues, action) => {
         return {
           ...filters,
           [action.filter]: action.value
+        };
+      }
+
+    case REMOVE_FILTER:
+      if (['genres', 'sizes'].includes(action.filter)) {
+        const filterIndex = filters[action.filter].indexOf(action.value);
+        const nextList = filters[action.filter].delete(filterIndex);
+        return {
+          ...filters,
+          [action.filter]: nextList
+        };
+      }
+
+      if (['maxPrice', 'minPrice'].includes(action.filter)) {
+        return {
+          ...filters,
+          [action.filter]: null
         };
       }
     default:

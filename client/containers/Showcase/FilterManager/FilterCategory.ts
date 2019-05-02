@@ -1,4 +1,4 @@
-import { addFilter } from 'actions/filters';
+import { addFilter, removeFilter } from 'actions/filters';
 import FilterCategory from 'components/Showcase/FilterManager/FilterCategory';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -13,11 +13,13 @@ const mapStateToProps = (state) => ({
 });
 
 export interface IFilterCategoryDispatchProps {
-  onClick: Function;
+  onAddFilter: Function;
+  onRemoveFilter: Function;
 }
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-  onClick: addFilter
+  onAddFilter: addFilter,
+  onRemoveFilter: removeFilter
 }, dispatch);
 
 export default connect<IFilterCategoryStateProps, IFilterCategoryDispatchProps, {}>

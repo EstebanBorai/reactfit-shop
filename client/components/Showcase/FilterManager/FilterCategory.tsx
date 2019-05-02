@@ -1,17 +1,27 @@
+import { IFilterCategoryDispatchProps } from 'containers/Showcase/FilterManager/FilterCategory';
 import * as React from 'react';
+import { Props as IFilterItem } from './FilterItem';
 
 interface IFilterCategory {
   title: string;
   filterKey: string;
-  onClick: Function;
   children: JSX.Element | JSX.Element[];
 }
 
-const FilterCategory = (props: IFilterCategory) => {
-  const withClickHandler = React.Children.map(props.children, (child) => (
-    React.cloneElement(child, {
+export interface IFilterItemCloneProps {
+  filterKey?: string;
+  onAddFilter?: Function;
+  onRemoveFilter?: Function;
+}
+
+type Props = IFilterCategory & IFilterCategoryDispatchProps;
+
+const FilterCategory = (props: Props) => {
+  const withClickHandler = React.Children.map(props.children, (child: React.ReactElement<IFilterItem>) => (
+    React.cloneElement<IFilterItemCloneProps>(child, {
       filterKey: props.filterKey,
-      onClick: () => props.onClick(props.filterKey, child.props.filterValue)
+      onAddFilter: () => props.onAddFilter(props.filterKey, child.props.filterValue),
+      onRemoveFilter: () => props.onRemoveFilter(props.filterKey, child.props.filterValue)
     })
   ));
 
