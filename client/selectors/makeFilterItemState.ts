@@ -3,7 +3,7 @@ import { createSelector } from 'reselect';
 const makeFilterItemState = (originalState, originalOwnProps) => {
   const filterStateSelector = (state) => state.filters[originalOwnProps.filterKey];
 
-  const isFilterActive = (selectedFilters) => {
+  const getActiveFilters = (selectedFilters) => {
     if (['genres', 'sizes'].includes(originalOwnProps.filterKey)) {
       return selectedFilters.indexOf(originalOwnProps.filterValue) !== -1;
     }
@@ -11,7 +11,7 @@ const makeFilterItemState = (originalState, originalOwnProps) => {
 
   const isFilterActiveSelector = createSelector(
     filterStateSelector,
-    (filters) => isFilterActive(filters)
+    (filters) => getActiveFilters(filters)
   );
 
   return (state, ownProps) => {
