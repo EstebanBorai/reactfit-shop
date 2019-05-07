@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const filterItemStateFactory = (originalState, originalOwnProps) => {
+const makeFilterItemState = (originalState, originalOwnProps) => {
   const filterStateSelector = (state) => state.filters[originalOwnProps.filterKey];
 
   const isFilterActive = (selectedFilters) => {
@@ -21,4 +21,4 @@ const filterItemStateFactory = (originalState, originalOwnProps) => {
   };
 };
 
-export default filterItemStateFactory;
+export default makeFilterItemState;
