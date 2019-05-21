@@ -3,7 +3,7 @@
 
 <p align="center">  
   <img
-    src="https://raw.githubusercontent.com/gitpullsh/reactfit-shop/master/docs/screenshot.png" 
+    src="https://raw.githubusercontent.com/estebanborai/reactfit-shop/master/docs/screenshot.png" 
     alt="screenshot"
   />
 </p>
@@ -12,7 +12,7 @@
 #### Clone the repository
 ```bash
 # clone the repository
-git clone https://github.com/gitpullsh/reactfit-shop.git
+git clone https://github.com/estebanborai/reactfit-shop.git
 
 # step into project root directory
 cd reactfit-shop/

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Sample React.js Fitness Shop ",
   "main": "index.js",
-  "repository": "https://github.com/gitpullsh/reactfit-shop.git",
+  "repository": "https://github.com/estebanborai/reactfit-shop.git",
   "author": "Esteban Borai <estebanborai@outlook.com>",
   "license": "MIT",
   "scripts": {

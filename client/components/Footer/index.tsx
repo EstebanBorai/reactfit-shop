@@ -5,7 +5,7 @@ import './footer.scss';
 
 const Footer = () => (
   <footer className="site-footer">
-    <small>エステバン ボライ | <FontAwesomeIcon icon={faGithub} />&nbsp;gitpullsh | {new Date().getFullYear()}</small>
+    <small>エステバン ボライ | <FontAwesomeIcon icon={faGithub} />&nbsp;estebanborai | {new Date().getFullYear()}</small>
   </footer>
 );
 
